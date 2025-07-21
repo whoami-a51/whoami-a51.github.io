@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!-- programado por whoami-a51 :D -->
 <!-- dica: flags são como fantasmas, só vê quem inspeciona -->
-<!-- flag{vnc_none_auth_exposed} -->
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
@@ -297,6 +296,29 @@
     ↑
   </button>
 
+  <script>
+    // Flag "escondida" em JS
+    const encodedFlag = "Q1RGe3ZuY19ub25lX2F1dGhfZXhwb3NlZH0="; // Base64 da flag
+
+    function showFlag() {
+      const flag = atob(encodedFlag);
+      const flagElement = document.createElement("div");
+      flagElement.id = "hidden-flag";
+      flagElement.style.position = "fixed";
+      flagElement.style.bottom = "10px";
+      flagElement.style.right = "10px";
+      flagElement.style.background = "#00ff88";
+      flagElement.style.color = "#000";
+      flagElement.style.padding = "10px";
+      flagElement.style.fontFamily = "'Courier New', monospace";
+      flagElement.style.borderRadius = "5px";
+      flagElement.style.boxShadow = "0 0 10px #00ff88";
+      flagElement.textContent = flag;
+      document.body.appendChild(flagElement);
+    }
+  </script>
+
+</body>
   <script>
     const btnTop = document.getElementById("btnTop");
 
