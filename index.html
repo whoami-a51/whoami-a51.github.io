@@ -3,364 +3,338 @@
 <!-- não repare na bagunça, não sou bom em programação -->
 <!-- dica: flags são como fantasmas, só vê quem inspeciona -->
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link
-    rel="icon"
-    href="https://raw.githubusercontent.com/whoami-a51/whoami-a51.github.io/refs/heads/main/icon.png"
-    type="image/x-icon"
-  />
-  <title data-pt="Pentest & Bug Bounty | Serviços Éticos" data-en="Pentest & Bug Bounty | Ethical Services">
-    Pentest & Bug Bounty | Serviços Éticos
-  </title>
-  <meta
-    property="og:title"
-    content="Pentest & Bug Bounty | Serviços Éticos"
-    data-pt="Pentest & Bug Bounty | Serviços Éticos"
-    data-en="Pentest & Bug Bounty | Ethical Services"
-  />
-  <meta
-    property="og:description"
-    content="Serviços de segurança cibernética, testes de intrusão e análise de vulnerabilidades."
-    data-pt="Serviços de segurança cibernética, testes de intrusão e análise de vulnerabilidades."
-    data-en="Cybersecurity services, penetration testing, and vulnerability analysis."
-  />
-  <meta property="og:image" content="https://whoami-a51.github.io/preview.png" />
-  <meta property="og:url" content="https://whoami-a51.github.io/" />
-  <meta property="og:type" content="website" />
-
-  <style>
-    body {
-      background-color: #0f0f0f;
-      color: #e0e0e0;
-      font-family: "Courier New", Courier, monospace;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: #121212;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid #00ff88;
-    }
-
-    header h1 {
-      color: #00ff88;
-      margin: 0;
-    }
-
-    nav {
-      background-color: #1a1a1a;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    nav a {
-      color: #00ffaa;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .services,
-    .contact {
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      color: #00ff88;
-      border-bottom: 1px solid #00ffaa;
-      padding-bottom: 10px;
-    }
-
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-
-    footer {
-      background: #111;
-      color: #777;
-      text-align: center;
-      padding: 20px;
-      border-top: 1px solid #00ffaa;
-    }
-
-    a.email-link {
-      color: #00ffaa;
-    }
-
-  </style>
-</head>
-<body>
-  <audio autoplay loop>
-    <source src="music.mp3" type="audio/mpeg" />
-    Seu navegador não suporta áudio HTML5.
-  </audio>
-
-  <header>
-    <h1 data-pt="Serviços de Pentest & Bug Bounty" data-en="Pentest & Bug Bounty Services">
-      Serviços de Pentest & Bug Bounty
-    </h1>
-    <p data-pt="Segurança ofensiva com ética, precisão e confidencialidade" data-en="Offensive security with ethics, precision, and confidentiality">
-      Segurança ofensiva com ética, precisão e confidencialidade
-    </p>
-  </header>
-
-  <nav>
-    <a href="#servicos" data-pt="Serviços" data-en="Services">Serviços</a>
-    <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
-    <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
-  </nav>
-
-  <div style="text-align:center; margin: 10px 0;">
-    <select id="language-selector" aria-label="Selecione o idioma / Select language" style="font-family: 'Courier New', monospace; padding:5px; border:1px solid #00ffaa; border-radius:5px; background:#1a1a1a; color:#fff;">
-      <option value="pt" selected>Português</option>
-      <option value="en">English</option>
-    </select>
-  </div>
-
-  <section id="servicos" class="services">
-    <h2 data-pt="Serviços Oferecidos" data-en="Services Offered">Serviços Oferecidos</h2>
-  <h3>🕷️ Testes de Penetração 🕷️</h3>
-  <ul>
-    <li data-pt="Teste de penetração em aplicações web, mobile e redes" data-en="Penetration testing in web, mobile and networks">
-      Testes de penetração em aplicações web, mobile e redes
-    </li>
-    <li data-pt="Auditorias de segurança em infraestrutura e dispositivos IoT" data-en="Security audits in infrastructure and IoT devices">
-      Testes de invasão em infraestrutura e dispositivos IoT
-    </li>
-    <li data-pt="Testes de invasão controlados em dispositivos físicos (portões eletrônicos, smart locks, câmeras IP)" data-en="Controlled intrusion tests on physical devices (electronic gates, smart locks, IP cameras)">
-      Testes de invasão controlados em dispositivos físicos (portões eletrônicos, smart locks, câmeras IP)
-    </li>
-    <li data-pt="Testes de segurança em ambientes industriais (SCADA, ICS, PLCs)" data-en="Security testing in industrial environments (SCADA, ICS, PLCs)">
-      Testes de segurança em ambientes industriais (SCADA, ICS, PLCs)
-    </li>
-  </ul>
-
-  <h3>🕷️ Análises de Segurança 🕷️</h3>
-  <ul>
-    <li data-pt="Análise de segurança em contas pessoais (Instagram, e-mail, etc)" data-en="Security analysis in personal accounts (Instagram, email, etc)">
-      Análise de segurança em contas pessoais (Instagram, e-mail, etc)
-    </li>
-    <li data-pt="Análise de segurança em dispositivos pessoais (Android, iOS, macOS, Windows e Linux)" data-en="Penetration testing on personal devices (Android, iOS, macOS, Windows and Linux)">
-      Análise de segurança em dispositivos pessoais (Android, iOS, macOS, Windows e Linux)
-    </li>
-    <li data-pt="Análise de segurança em carteiras de Bitcoin" data-en="Security analysis of Bitcoin wallets">
-      Análise de segurança em carteiras de Bitcoin
-    </li>
-  </ul>
-
-  <h3>🕷️ Simulações 🕷️</h3>
-  <ul>
-    <li data-pt="Simulações controladas de phishing e engenharia social" data-en="Controlled phishing and social engineering simulations">
-      Simulações controladas de phishing e engenharia social
-    </li>
-    <li data-pt="Simulações de ataques com malwares para avaliação de resposta a incidentes" data-en="Malware attack simulations for incident response assessment">
-      Simulações de ataques com malwares para avaliação de resposta a incidentes
-    </li>
-  </ul>
-
-  <h3>🕷️ Complementares 🕷️</h3>
-  <ul>
-    <li data-pt="Identificação de vulnerabilidades (OWASP Top 10, CVEs)" data-en="Vulnerability identification (OWASP Top 10, CVEs)">
-      Identificação de vulnerabilidades (OWASP Top 10, CVEs)
-    </li>
-    <li data-pt="Emissão de relatórios técnicos e executivos com plano de mitigação" data-en="Issuance of technical and executive reports with mitigation plan">
-      Emissão de relatórios técnicos e executivos com plano de mitigação
-    </li>
-    <li data-pt="Consultoria para programas de Bug Bounty" data-en="Consulting for Bug Bounty programs">
-      Consultoria para programas de Bug Bounty
-    </li>
-  </ul>
-      <p data-pt="Testes realizados nos modos Black Box, Grey Box e White Box." data-en="Tests performed in Black Box, Gray Box and White Box modes.">
-    Testes realizados nos modos Black Box, Grey Box e White Box.
-      <p data-pt="Se o seu objetivo específico de segurança não estiver listado aqui, entre em contato — avaliarei sua solicitação e proporei uma solução sob medida para atender às suas necessidades." data-en="If your specific security objective is not listed here, please contact me — I will evaluate your request and propose a tailored solution to meet your needs.">
-    Se o seu objetivo específico de segurança não estiver listado aqui, entre em contato — avaliarei sua solicitação e proporei uma solução sob medida para atender às suas necessidades. 
-  </p>
-  </section>
-  <section id="owasp">
-    <h2 data-pt="Top 10 OWASP" data-en="OWASP Top 10">Top 10 OWASP</h2>
-    <p
-      data-pt="Essas são as 10 vulnerabilidades mais críticas em aplicações web, segundo a OWASP. Nosso trabalho é encontrá-las antes dos atacantes:"
-      data-en="These are the 10 most critical web application vulnerabilities, according to OWASP. Our job is to find them before attackers do:">
-      Essas são as 10 vulnerabilidades mais críticas em aplicações web, segundo a OWASP. Nosso trabalho é encontrá-las antes dos atacantes:
-    </p>
-    <ul>
-      <li data-pt="A01: Controle de acesso quebrado" data-en="A01: Broken Access Control">A01: Controle de acesso quebrado</li>
-      <li data-pt="A02: Falhas criptográficas" data-en="A02: Cryptographic Failures">A02: Falhas criptográficas</li>
-      <li data-pt="A03: Injeção (SQL, NoSQL, etc)" data-en="A03: Injection (SQL, NoSQL, etc)">A03: Injeção (SQL, NoSQL, etc)</li>
-      <li data-pt="A04: Design inseguro" data-en="A04: Insecure Design">A04: Design inseguro</li>
-      <li data-pt="A05: Configuração insegura" data-en="A05: Security Misconfiguration">A05: Configuração insegura</li>
-      <li data-pt="A06: Componentes vulneráveis ou desatualizados" data-en="A06: Vulnerable or Outdated Components">A06: Componentes vulneráveis ou desatualizados</li>
-      <li data-pt="A07: Falhas de autenticação e identificação" data-en="A07: Identification and Authentication Failures">A07: Falhas de autenticação e identificação</li>
-      <li data-pt="A08: Falhas de integridade (ex: ataques à cadeia de suprimentos)" data-en="A08: Integrity Failures (e.g. supply chain attacks)">A08: Falhas de integridade (ex: ataques à cadeia de suprimentos)</li>
-      <li data-pt="A09: Falhas de monitoramento e logging" data-en="A09: Logging and Monitoring Failures">A09: Falhas de monitoramento e logging</li>
-      <li data-pt="A10: SSRF (Server-Side Request Forgery)" data-en="A10: SSRF (Server-Side Request Forgery)">A10: SSRF (Server-Side Request Forgery)</li>
-    </ul>
-  </section>
-  
-  <section id="sobre">
-    <h2 data-pt="Sobre" data-en="About">Sobre</h2>
-    <p
-      data-pt="Comecei a mexer com computadores aos 3 anos e, aos 10 anos, comecei a invadir sistemas; durante a adolescência, atuei nas maiores equipes hacktivistas — experiência que me deu uma visão apurada para identificar ataques e vulnerabilidades. Hoje, utilizo esse conhecimento de forma ética e profissional para proteger sistemas. Ethical Hacker com experiência prática em testes de intrusão, resposta a incidentes e análise de falhas de segurança em ambientes reais. Participação ativa em plataformas como HackerOne e GitHub. Comprometido com a segurança do cliente e a privacidade das informações."
-      data-en="I started hacking systems at age 10 and during my teens participated in major hacktivist teams — gaining deep insight into detecting attacks and vulnerabilities. Today, I use this knowledge ethically and professionally to protect systems. Ethical Hacker with hands-on experience in intrusion testing, incident response, and real-world security flaw analysis. Active participant in platforms such as HackerOne and GitHub. Committed to client security and information privacy.">
-      Comecei a invadir sistemas aos 10 anos e, durante a adolescência, atuei nas maiores equipes hacktivistas — experiência que me deu uma visão apurada para identificar ataques e vulnerabilidades. Hoje, utilizo esse conhecimento de forma ética e profissional para proteger sistemas. Ethical Hacker com experiência prática em testes de intrusão, resposta a incidentes e análise de falhas de segurança em ambientes reais. Participação ativa em plataformas como HackerOne e GitHub. Comprometido com a segurança do cliente e a privacidade das informações.
-    </p>
-  </section>
-  <section
-    id="terminal"
-    style="
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      background: #111;
-      color: #0f0;
-      font-family: 'Courier New', monospace;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #00ff88;
-    "
-  >
-    <pre id="terminal-text" style="white-space: pre-wrap; user-select: none;"></pre>
-  </section>
-
-  <script>
-    const terminalText = document.getElementById("terminal-text");
-    const commands = [
-      "whoami",
-      "nmap -Pn -T4 -sS -p 5900 --open 104.16.149.244",
-      "echo -ne 'RFB 003.008\\n' | nc 104.16.149.244 5900",
-      "msf6 auxiliary(scanner/vnc/vnc_none_auth) > run",
-      "python3 exploit.py 104.16.149.244 --execute",
-      "exit",
-    ];
-
-    let line = 0;
-    let charIndex = 0;
-    let currentLine = "";
-    let typing = true;
-
-    function type() {
-      if (line >= commands.length) return;
-
-      if (charIndex < commands[line].length) {
-        currentLine += commands[line][charIndex];
-        terminalText.textContent = terminalText.textContent + commands[line][charIndex];
-        charIndex++;
-        setTimeout(type, 80);
-      } else {
-        terminalText.textContent += "\n$ ";
-        line++;
-        charIndex = 0;
-        currentLine = "";
-        setTimeout(type, 500);
-      }
-    }
-
-    terminalText.textContent = "$ ";
-    setTimeout(type, 500);
-  </script>
-
-  <section id="contato" class="contact">
-    <h2 data-pt="Contato" data-en="Contact">Contato</h2>
-    <p data-pt="Quer proteger seu sistema ou descobrir vulnerabilidades antes dos atacantes?" data-en="Want to protect your system or discover vulnerabilities before attackers?">
-      Quer proteger seu sistema ou descobrir vulnerabilidades antes dos atacantes?
-    <p>
-       <span data-pt="Envie-me um e-mail:" data-en="Send me an email:">Envie-me um e-mail:</span>
-       <a class="email-link" href="mailto:whoami.a51@protonmail.com">whoami.a51@protonmail.com</a>
-    </p>
-    <p data-pt="Chave PGP disponível sob solicitação." data-en="PGP key available upon request.">
-      Chave PGP disponível sob solicitação.
-    </p>
-  </section>
-
-  <footer>
-    &copy; 2025 - Pentest & Bug Bounty. Todos os direitos reservados.
-  </footer>
-  <button
-    id="btnTop"
-    title="Subir ao topo"
-    style="
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #00ff88;
-      color: #0f0f0f;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      z-index: 1000;
-      font-family: 'Courier New', monospace;
-    "
-  >
-    ↑
-  </button>
-
-  <script>
-    const encodedFlag = "ZmxhZ3t2bmNfbm9uZV9hdXRoX2V4cG9zZWR9";
-
-    function showFlag() {
-      const flag = atob(encodedFlag);
-      const flagElement = document.createElement("div");
-      flagElement.id = "hidden-flag";
-      flagElement.style.position = "fixed";
-      flagElement.style.bottom = "10px";
-      flagElement.style.right = "10px";
-      flagElement.style.background = "#00ff88";
-      flagElement.style.color = "#000";
-      flagElement.style.padding = "10px";
-      flagElement.style.fontFamily = "'Courier New', monospace";
-      flagElement.style.borderRadius = "5px";
-      flagElement.style.boxShadow = "0 0 10px #00ff88";
-      flagElement.textContent = flag;
-      document.body.appendChild(flagElement);
-    }
-  </script>
-
-  <script>
-    const btnTop = document.getElementById("btnTop");
-
-    window.onscroll = function () {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        btnTop.style.display = "block";
-      } else {
-        btnTop.style.display = "none";
-      }
-    };
-
-    btnTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    const selector = document.getElementById("language-selector");
-
-    function updateLanguage(lang) {
-      document.querySelectorAll("[data-pt]").forEach((el) => {
-        el.innerText = el.getAttribute(`data-${lang}`);
-      });
-      document.title = document.querySelector("title").getAttribute(`data-${lang}`);
-    }
-
-    selector.addEventListener("change", (e) => {
-      updateLanguage(e.target.value);
-    });
-
-    updateLanguage("pt");
-  </script>
-</body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link
+         rel="icon"
+         href="https://raw.githubusercontent.com/whoami-a51/whoami-a51.github.io/refs/heads/main/icon.png"
+         type="image/x-icon"
+         />
+      <title data-pt="Pentest & Bug Bounty | Serviços Éticos" data-en="Pentest & Bug Bounty | Ethical Services">
+         Pentest & Bug Bounty | Serviços Éticos
+      </title>
+      <meta
+         property="og:title"
+         content="Pentest & Bug Bounty | Serviços Éticos"
+         data-pt="Pentest & Bug Bounty | Serviços Éticos"
+         data-en="Pentest & Bug Bounty | Ethical Services"
+         />
+      <meta
+         property="og:description"
+         content="Serviços de segurança cibernética, testes de intrusão e análise de vulnerabilidades."
+         data-pt="Serviços de segurança cibernética, testes de intrusão e análise de vulnerabilidades."
+         data-en="Cybersecurity services, penetration testing, and vulnerability analysis."
+         />
+      <meta property="og:image" content="https://whoami-a51.github.io/preview.png" />
+      <meta property="og:url" content="https://whoami-a51.github.io/" />
+      <meta property="og:type" content="website" />
+      <style>
+         body {
+         background-color: #0f0f0f;
+         color: #e0e0e0;
+         font-family: "Courier New", Courier, monospace;
+         margin: 0;
+         padding: 0;
+         }
+         header {
+         background: #121212;
+         padding: 20px;
+         text-align: center;
+         border-bottom: 2px solid #00ff88;
+         }
+         header h1 {
+         color: #00ff88;
+         margin: 0;
+         }
+         nav {
+         background-color: #1a1a1a;
+         padding: 10px 0;
+         text-align: center;
+         }
+         nav a {
+         color: #00ffaa;
+         text-decoration: none;
+         margin: 0 15px;
+         font-weight: bold;
+         }
+         nav a:hover {
+         text-decoration: underline;
+         }
+         section {
+         padding: 40px 20px;
+         max-width: 900px;
+         margin: auto;
+         }
+         .services,
+         .contact {
+         margin-bottom: 40px;
+         }
+         h2 {
+         color: #00ff88;
+         border-bottom: 1px solid #00ffaa;
+         padding-bottom: 10px;
+         }
+         ul {
+         list-style-type: square;
+         padding-left: 20px;
+         }
+         footer {
+         background: #111;
+         color: #777;
+         text-align: center;
+         padding: 20px;
+         border-top: 1px solid #00ffaa;
+         }
+         a.email-link {
+         color: #00ffaa;
+         }
+      </style>
+   </head>
+   <body>
+      <audio autoplay loop>
+         <source src="music.mp3" type="audio/mpeg" />
+         Seu navegador não suporta áudio HTML5.
+      </audio>
+      <header>
+         <h1 data-pt="Serviços de Pentest & Bug Bounty" data-en="Pentest & Bug Bounty Services">
+            Serviços de Pentest & Bug Bounty
+         </h1>
+         <p data-pt="Segurança ofensiva com ética, precisão e confidencialidade" data-en="Offensive security with ethics, precision, and confidentiality">
+            Segurança ofensiva com ética, precisão e confidencialidade
+         </p>
+      </header>
+      <nav>
+         <a href="#servicos" data-pt="Serviços" data-en="Services">Serviços</a>
+         <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
+         <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
+      </nav>
+      <div style="text-align:center; margin: 10px 0;">
+         <select id="language-selector" aria-label="Selecione o idioma / Select language" style="font-family: 'Courier New', monospace; padding:5px; border:1px solid #00ffaa; border-radius:5px; background:#1a1a1a; color:#fff;">
+            <option value="pt" selected>Português</option>
+            <option value="en">English</option>
+         </select>
+      </div>
+      <section id="servicos" class="services">
+         <h2 data-pt="Serviços Oferecidos" data-en="Services Offered">Serviços Oferecidos</h2>
+         <h3>🕷️ Testes de Penetração 🕷️</h3>
+         <ul>
+            <li data-pt="Teste de penetração em aplicações web, mobile e redes" data-en="Penetration testing in web, mobile and networks">
+               Testes de penetração em aplicações web, mobile e redes
+            </li>
+            <li data-pt="Testes de invasão em infraestruturas e dispositivos IoT" data-en="Intrusion tests on infrastructure and IoT devices">
+               Testes de invasão em infraestruturas e dispositivos IoT
+            </li>
+            <li data-pt="Testes de invasão controlados em dispositivos físicos (portões eletrônicos, smart locks, câmeras IP)" data-en="Controlled intrusion tests on physical devices (electronic gates, smart locks, IP cameras)">
+               Testes de invasão controlados em dispositivos físicos (portões eletrônicos, smart locks, câmeras IP)
+            </li>
+            <li data-pt="Testes de segurança em ambientes industriais (SCADA, ICS, PLCs)" data-en="Security testing in industrial environments (SCADA, ICS, PLCs)">
+               Testes de segurança em ambientes industriais (SCADA, ICS, PLCs)
+            </li>
+         </ul>
+         <h3>🕷️ Análises de Segurança 🕷️</h3>
+         <ul>
+            <li data-pt="Análise de segurança em contas pessoais (Instagram, e-mail, etc)" data-en="Security analysis in personal accounts (Instagram, email, etc)">
+               Análise de segurança em contas pessoais (Instagram, e-mail, etc)
+            </li>
+            <li data-pt="Análise de segurança em dispositivos pessoais (Android, iOS, macOS, Windows e Linux)" data-en="Penetration testing on personal devices (Android, iOS, macOS, Windows and Linux)">
+               Análise de segurança em dispositivos pessoais (Android, iOS, macOS, Windows e Linux)
+            </li>
+            <li data-pt="Análise de segurança em carteiras de Bitcoin" data-en="Security analysis of Bitcoin wallets">
+               Análise de segurança em carteiras de Bitcoin
+            </li>
+         </ul>
+         <h3>🕷️ Simulações 🕷️</h3>
+         <ul>
+            <li data-pt="Simulações controladas de phishing e engenharia social" data-en="Controlled phishing and social engineering simulations">
+               Simulações controladas de phishing e engenharia social
+            </li>
+            <li data-pt="Simulações de ataques com malwares para avaliação de resposta a incidentes" data-en="Malware attack simulations for incident response assessment">
+               Simulações de ataques com malwares para avaliação de resposta a incidentes
+            </li>
+         </ul>
+         <h3>🕷️ Complementares 🕷️</h3>
+         <ul>
+            <li data-pt="Identificação de vulnerabilidades (OWASP Top 10, CVEs)" data-en="Vulnerability identification (OWASP Top 10, CVEs)">
+               Identificação de vulnerabilidades (OWASP Top 10, CVEs)
+            </li>
+            <li data-pt="Emissão de relatórios técnicos e executivos com plano de mitigação" data-en="Issuance of technical and executive reports with mitigation plan">
+               Emissão de relatórios técnicos e executivos com plano de mitigação
+            </li>
+            <li data-pt="Consultoria para programas de Bug Bounty" data-en="Consulting for Bug Bounty programs">
+               Consultoria para programas de Bug Bounty
+            </li>
+         </ul>
+         <p data-pt="Testes realizados nos modos Black Box, Grey Box e White Box." data-en="Tests performed in Black Box, Gray Box and White Box modes.">
+            Testes realizados nos modos Black Box, Grey Box e White Box.
+         <p data-pt="Se o seu objetivo específico de segurança não estiver listado aqui, entre em contato — avaliarei sua solicitação e proporei uma solução sob medida para atender às suas necessidades." data-en="If your specific security objective is not listed here, please contact me — I will evaluate your request and propose a tailored solution to meet your needs.">
+            Se o seu objetivo específico de segurança não estiver listado aqui, entre em contato — avaliarei sua solicitação e proporei uma solução sob medida para atender às suas necessidades. 
+         </p>
+      </section>
+      <section id="owasp">
+         <h2 data-pt="Top 10 OWASP" data-en="OWASP Top 10">Top 10 OWASP</h2>
+         <p
+            data-pt="Essas são as 10 vulnerabilidades mais críticas em aplicações web, segundo a OWASP. Nosso trabalho é encontrá-las antes dos atacantes:"
+            data-en="These are the 10 most critical web application vulnerabilities, according to OWASP. Our job is to find them before attackers do:">
+            Essas são as 10 vulnerabilidades mais críticas em aplicações web, segundo a OWASP. Nosso trabalho é encontrá-las antes dos atacantes:
+         </p>
+         <ul>
+            <li data-pt="A01: Controle de acesso quebrado" data-en="A01: Broken Access Control">A01: Controle de acesso quebrado</li>
+            <li data-pt="A02: Falhas criptográficas" data-en="A02: Cryptographic Failures">A02: Falhas criptográficas</li>
+            <li data-pt="A03: Injeção (SQL, NoSQL, etc)" data-en="A03: Injection (SQL, NoSQL, etc)">A03: Injeção (SQL, NoSQL, etc)</li>
+            <li data-pt="A04: Design inseguro" data-en="A04: Insecure Design">A04: Design inseguro</li>
+            <li data-pt="A05: Configuração insegura" data-en="A05: Security Misconfiguration">A05: Configuração insegura</li>
+            <li data-pt="A06: Componentes vulneráveis ou desatualizados" data-en="A06: Vulnerable or Outdated Components">A06: Componentes vulneráveis ou desatualizados</li>
+            <li data-pt="A07: Falhas de autenticação e identificação" data-en="A07: Identification and Authentication Failures">A07: Falhas de autenticação e identificação</li>
+            <li data-pt="A08: Falhas de integridade (ex: ataques à cadeia de suprimentos)" data-en="A08: Integrity Failures (e.g. supply chain attacks)">A08: Falhas de integridade (ex: ataques à cadeia de suprimentos)</li>
+            <li data-pt="A09: Falhas de monitoramento e logging" data-en="A09: Logging and Monitoring Failures">A09: Falhas de monitoramento e logging</li>
+            <li data-pt="A10: SSRF (Server-Side Request Forgery)" data-en="A10: SSRF (Server-Side Request Forgery)">A10: SSRF (Server-Side Request Forgery)</li>
+         </ul>
+      </section>
+      <section id="sobre">
+         <h2 data-pt="Sobre" data-en="About">Sobre</h2>
+         <p
+            data-pt="Comecei a mexer com computadores aos 3 anos e, aos 10 anos, comecei a invadir sistemas; durante a adolescência, atuei nas maiores equipes hacktivistas — experiência que me deu uma visão apurada para identificar ataques e vulnerabilidades. Hoje, utilizo esse conhecimento de forma ética e profissional para proteger sistemas. Ethical Hacker com experiência prática em testes de intrusão, resposta a incidentes e análise de falhas de segurança em ambientes reais. Participação ativa em plataformas como HackerOne e GitHub. Comprometido com a segurança do cliente e a privacidade das informações."
+            data-en="I started hacking systems at age 10 and during my teens participated in major hacktivist teams — gaining deep insight into detecting attacks and vulnerabilities. Today, I use this knowledge ethically and professionally to protect systems. Ethical Hacker with hands-on experience in intrusion testing, incident response, and real-world security flaw analysis. Active participant in platforms such as HackerOne and GitHub. Committed to client security and information privacy.">
+            Comecei a invadir sistemas aos 10 anos e, durante a adolescência, atuei nas maiores equipes hacktivistas — experiência que me deu uma visão apurada para identificar ataques e vulnerabilidades. Hoje, utilizo esse conhecimento de forma ética e profissional para proteger sistemas. Ethical Hacker com experiência prática em testes de intrusão, resposta a incidentes e análise de falhas de segurança em ambientes reais. Participação ativa em plataformas como HackerOne e GitHub. Comprometido com a segurança do cliente e a privacidade das informações.
+         </p>
+      </section>
+      <section
+         id="terminal"
+         style="
+         max-width: 900px;
+         margin: auto;
+         padding: 20px;
+         background: #111;
+         color: #0f0;
+         font-family: 'Courier New', monospace;
+         border-radius: 8px;
+         box-shadow: 0 0 10px #00ff88;
+         "
+         >
+         <pre id="terminal-text" style="white-space: pre-wrap; user-select: none;"></pre>
+      </section>
+      <script>
+         const terminalText = document.getElementById("terminal-text");
+         const commands = [
+           "whoami",
+           "nmap -Pn -T4 -sS -p 5900 --open 104.16.149.244",
+           "echo -ne 'RFB 003.008\\n' | nc 104.16.149.244 5900",
+           "msf6 auxiliary(scanner/vnc/vnc_none_auth) > run",
+           "python3 exploit.py 104.16.149.244 --execute",
+           "exit",
+         ];
+         
+         let line = 0;
+         let charIndex = 0;
+         let currentLine = "";
+         let typing = true;
+         
+         function type() {
+           if (line >= commands.length) return;
+         
+           if (charIndex < commands[line].length) {
+             currentLine += commands[line][charIndex];
+             terminalText.textContent = terminalText.textContent + commands[line][charIndex];
+             charIndex++;
+             setTimeout(type, 80);
+           } else {
+             terminalText.textContent += "\n$ ";
+             line++;
+             charIndex = 0;
+             currentLine = "";
+             setTimeout(type, 500);
+           }
+         }
+         
+         terminalText.textContent = "$ ";
+         setTimeout(type, 500);
+      </script>
+      <section id="contato" class="contact">
+         <h2 data-pt="Contato" data-en="Contact">Contato</h2>
+         <p data-pt="Quer proteger seu sistema ou descobrir vulnerabilidades antes dos atacantes?" data-en="Want to protect your system or discover vulnerabilities before attackers?">
+            Quer proteger seu sistema ou descobrir vulnerabilidades antes dos atacantes?
+         <p>
+            <span data-pt="Envie-me um e-mail:" data-en="Send me an email:">Envie-me um e-mail:</span>
+            <a class="email-link" href="mailto:whoami.a51@protonmail.com">whoami.a51@protonmail.com</a>
+         </p>
+         <p data-pt="Chave PGP disponível sob solicitação." data-en="PGP key available upon request.">
+            Chave PGP disponível sob solicitação.
+         </p>
+      </section>
+      <footer>
+         &copy; 2025 - Pentest & Bug Bounty. Todos os direitos reservados.
+      </footer>
+      <button
+         id="btnTop"
+         title="Subir ao topo"
+         style="
+         display: none;
+         position: fixed;
+         bottom: 20px;
+         right: 20px;
+         background: #00ff88;
+         color: #0f0f0f;
+         border: none;
+         padding: 10px 15px;
+         border-radius: 5px;
+         cursor: pointer;
+         font-weight: bold;
+         z-index: 1000;
+         font-family: 'Courier New', monospace;
+         "
+         >
+      ↑
+      </button>
+      <script>
+         const encodedFlag = "ZmxhZ3t2bmNfbm9uZV9hdXRoX2V4cG9zZWR9";
+         
+         function showFlag() {
+           const flag = atob(encodedFlag);
+           const flagElement = document.createElement("div");
+           flagElement.id = "hidden-flag";
+           flagElement.style.position = "fixed";
+           flagElement.style.bottom = "10px";
+           flagElement.style.right = "10px";
+           flagElement.style.background = "#00ff88";
+           flagElement.style.color = "#000";
+           flagElement.style.padding = "10px";
+           flagElement.style.fontFamily = "'Courier New', monospace";
+           flagElement.style.borderRadius = "5px";
+           flagElement.style.boxShadow = "0 0 10px #00ff88";
+           flagElement.textContent = flag;
+           document.body.appendChild(flagElement);
+         }
+      </script>
+      <script>
+         const btnTop = document.getElementById("btnTop");
+         
+         window.onscroll = function () {
+           if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+             btnTop.style.display = "block";
+           } else {
+             btnTop.style.display = "none";
+           }
+         };
+         
+         btnTop.addEventListener("click", () => {
+           window.scrollTo({ top: 0, behavior: "smooth" });
+         });
+         
+         const selector = document.getElementById("language-selector");
+         
+         function updateLanguage(lang) {
+           document.querySelectorAll("[data-pt]").forEach((el) => {
+             el.innerText = el.getAttribute(`data-${lang}`);
+           });
+           document.title = document.querySelector("title").getAttribute(`data-${lang}`);
+         }
+         
+         selector.addEventListener("change", (e) => {
+           updateLanguage(e.target.value);
+         });
+         
+         updateLanguage("pt");
+      </script>
+   </body>
 </html>
