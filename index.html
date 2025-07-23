@@ -209,9 +209,9 @@
       <section id="sobre">
          <h2 data-pt="Sobre" data-en="About">Sobre</h2>
          <p
-            data-pt="Comecei a explorar computadores aos 3 anos de idade e, aos 10, já realizava invasões a sistemas. Durante a adolescência, atuei em algumas das maiores equipes hacktivistas do mundo — experiência que desenvolveu meu olhar técnico para identificar falhas e vetores de ataque. Hoje, aplico esse conhecimento de forma ética e profissional, focado na proteção de sistemas e dados. Sou Ethical Hacker com experiência prática em testes de intrusão, resposta a incidentes e análise de vulnerabilidades em ambientes reais. Atuo de forma ativa em plataformas como HackerOne e GitHub, sempre comprometido com a segurança do cliente e a privacidade das informações."
-            data-en="I started exploring computers at the age of 3 and, by 10, was already breaking into systems. In my teenage years, I was part of some of the world’s largest hacktivist groups — an experience that sharpened my ability to identify vulnerabilities and attack vectors. Today, I apply this knowledge ethically and professionally, focusing on securing systems and protecting data. I’m an Ethical Hacker with hands-on experience in penetration testing, incident response, and real-world vulnerability analysis. I actively contribute on platforms like HackerOne and GitHub, always committed to client security and information privacy.">
-            Comecei a explorar computadores aos 3 anos de idade e, aos 10, já realizava invasões a sistemas. Durante a adolescência, atuei em algumas das maiores equipes hacktivistas do mundo — experiência que desenvolveu meu olhar técnico para identificar falhas e vetores de ataque. Hoje, aplico esse conhecimento de forma ética e profissional, focado na proteção de sistemas e dados. Sou Ethical Hacker com experiência prática em testes de intrusão, resposta a incidentes e análise de vulnerabilidades em ambientes reais. Atuo de forma ativa em plataformas como HackerOne e GitHub, sempre comprometido com a segurança do cliente e a privacidade das informações.
+            data-pt="Comecei a explorar computadores aos 3 anos de idade e, aos 10, já realizava algumas invasões a sistemas. Durante a adolescência, atuei em algumas das maiores equipes hacktivistas do mundo — experiência que desenvolveu meu olhar técnico para identificar falhas e vetores de ataque. Hoje, aplico esse conhecimento de forma ética e profissional, focado na proteção de infraestruturas e dados. Ethical Hacker com experiência prática em testes de intrusão, resposta a incidentes e análise de vulnerabilidades em ambientes reais. Atuo de forma ativa em plataformas como HackerOne e GitHub, sempre comprometido com a segurança do cliente e a privacidade das informações."
+            data-en="I started exploring computers at the age of 3 and, by 10, was already breaking some into systems. In my teenage years, I was part of some of the world’s largest hacktivist groups — an experience that sharpened my ability to identify vulnerabilities and attack vectors. Today, I apply this knowledge ethically and professionally, focusing on securing infrastructures and protecting data. Ethical Hacker with hands-on experience in penetration testing, incident response, and real-world vulnerability analysis. I actively contribute on platforms like HackerOne and GitHub, always committed to client security and information privacy.">
+            Comecei a explorar computadores aos 3 anos de idade e, aos 10, já realizava algumas invasões a sistemas. Durante a adolescência, atuei em algumas das maiores equipes hacktivistas do mundo — experiência que desenvolveu meu olhar técnico para identificar falhas e vetores de ataque. Hoje, aplico esse conhecimento de forma ética e profissional, focado na proteção de infraestruturas e dados. Ethical Hacker com experiência prática em testes de intrusão, resposta a incidentes e análise de vulnerabilidades em ambientes reais. Atuo de forma ativa em plataformas como HackerOne e GitHub, sempre comprometido com a segurança do cliente e a privacidade das informações.
          </p>
       </section>
       <section
@@ -227,7 +227,7 @@
          box-shadow: 0 0 10px #00ff88;
          "
          >
-         <pre id="terminal-text" style="white-space: pre-wrap; user-select: none;"></pre>
+          <pre id="terminal-text" style="white-space: pre-wrap; user-select: none;">$ <span id="cursor">█</span></pre>
       </section>
       <script>
          const terminalText = document.getElementById("terminal-text");
@@ -351,6 +351,16 @@
          
          updateLanguage("pt");
       </script>
+      <script>
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && e.key === 'k') {
+      alert("🕷️ Shell aberta (modo fake)\nDigite: showFlag() no console do navegador.");
+    }
+  });
+
+  // Expõe a função no escopo global
+  window.showFlag = showFlag;
+</script>
    </body>
 </html>
 <!-- tem certeza que olhou tudo? :P -->
