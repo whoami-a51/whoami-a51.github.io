@@ -90,13 +90,12 @@
          color: #00ffaa;
          }
          #cursor {
-  animation: blink 1s step-start infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
+         animation: blink 1s step-start infinite;
+         }
+         @keyframes blink {
+         0%, 100% { opacity: 1; }
+         50% { opacity: 0; }
+         }
       </style>
    </head>
    <body>
@@ -362,11 +361,9 @@
       <script>
   document.addEventListener('keydown', function (e) {
     if (e.ctrlKey && e.key === 'k') {
-      alert("🕷️ Shell aberta (modo fake)\nDigite: showFlag() no console do navegador.");
+      alert("🕷️ Shell aberta \nDigite: showFlag() no console do navegador.");
     }
   });
-
-  // Expõe a função no escopo global
   window.showFlag = showFlag;
 </script>
    </body>
