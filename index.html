@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="author" content="Whoami-a51" />
+      <meta name="viewport" content="width=device-width, initial-scale=0.9">
+      <meta
+         name="description"
+         content="Serviços de segurança cibernética, testes de intrução e análise de vulnerabilidades"
+         />
+      <meta
+         name="keywords"
+         content=""
+         />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="theme-color" content="#ff3a5e" />
+      <meta name="copyright" content="whoami" />
+      <meta http-equiv="content-language" content="pt-br" />
+      <meta property="og:title" content="Whoami-a51" />
+      <meta property="og:description" content="Pentest & Bug Bounty" />
+      <link rel="preconnect" href="https://fonts.googleapis.com/" />
+      <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600&amp;display=swap"
+         rel="stylesheet"
+         />
+      <link rel="manifest" href="manifest.html" />
+      <link rel="stylesheet" href="assets/css/style.css" />
+      <link
+         rel="shortcut icon"
+         href="assets/icons/key.png"
+         type="image/x-icon"
+         />
+      <link rel="icon" href="assets/icons/key.png" />
+      <link rel="apple-touch-icon" href="assets/image/logo-page.html" />
+      <link rel="canonical" href="https://github.com/whoami-a51" />
+      <script src="assets/js/svg-inject.min.js"></script>
+      <style>
+         body {
+         user-select: none;
+         -webkit-user-select: none;
+         -moz-user-select: none; 
+         -ms-user-select: none;
+         }
+         img {
+         pointer-events: none;
+         }
+         @font-face {
+         font-family: 'LiveOverfont';
+         src: url('LiveOverfont.woff') format('woff');
+         }
+      </style>
+      <title>Pentest & Bug Bounty</title>
+   </head>
+   <body>
+      <script type="module">
+         import { followingDotCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+         new followingDotCursor();
+      </script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+         document.addEventListener('contextmenu', function (e) {
+         e.preventDefault();
+         alert('Apenas pare, pequeno gafanhoto.');
+         });
+         document.addEventListener('keydown', function (e) {
+         if (
+         e.key === 'F11' ||
+         e.key === 'F12' ||
+         e.key === 'TAB' ||
+         e.key === 'Print' ||
+         e.key === 'PrintScreen' ||
+         e.key === 'Escape' ||
+         (e.ctrlKey && e.key === 'u') ||
+         (e.ctrlKey && e.key === 'U') ||
+         (e.ctrlKey && e.key === 's') ||
+         (e.ctrlKey && e.key === 'S') ||
+         (e.ctrlKey && e.key === 'f') ||
+         (e.ctrlKey && e.key === 'F') ||
+         (e.ctrlKey && e.key === 'g') ||
+         (e.ctrlKey && e.key === 'G') ||
+         (e.ctrlKey && e.key === 'p') ||
+         (e.ctrlKey && e.key === 'P') || 
+         (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+         (e.ctrlKey && e.shiftKey && e.key === 'i') ||
+         (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+         (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+         (e.ctrlKey && e.shiftKey && e.key === 's') ||
+         (e.ctrlKey && e.shiftKey && e.key === 'S') ||
+         (e.ctrlKey && e.shiftKey && e.key === 'j') ||
+         (e.ctrlKey && e.shiftKey && e.key === 'J')
+         ) {
+         e.preventDefault();
+         alert('Kupal kaba boss.');
+         }
+         });
+      </script>
+      <header>
+         <div class="grid-layout">
+            <nav>
+               <img src="assets/icons/hacker.png" alt="Hacker icon" width="90px" height="90px"/>
+               <div class="mobile-menu">
+                  <div class="line1"></div>
+                  <div class="line2"></div>
+                  <div class="line3"></div>
+               </div>
+               <ul class="nav-list">
+                  <li><a href="#s-home" style="color: rgb(220, 220, 220); font-family: 'Rajdhani',  sans-serif;">HOME<span>/</span></a></li>
+                  <li><a href="#s-about" style="color: rgb(220, 220, 220); font-family: 'Rajdhani', sans-serif;">SOBRE<span>/</span></a></li>
+                  <li><a href="#s-experience" style="color: rgb(220, 220, 220); font-family: 'Rajdhani', sans-serif;">SERVIÇOS<span>/</span></a></li>
+                  <li><a href="#s-projects" style="color: rgb(220, 220, 220); font-family: 'Rajdhani', sans-serif;">HARDWARE HACKING<span>/</span></a></li>
+                  <li><a href="#s-skills" style="color: rgb(220, 220, 220); font-family: 'Rajdhani', sans-serif;">CONTATO<span>/</span></a></li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+      <main>
+         <section id="s-home">
+            <div class="grid-layout">
+               <div id="visitor-info">
+                  <p id="visitor-ip"></p>
+                  <p id="visitor-isp"></p>
+                  <p id="visitor-location"></p>
+                  <p id="visitor-city"></p>
+                  <p id="visitor-region"></p>
+                  <p id="visitor-country"></p>
+                  <p id="visitor-postal"></p>
+                  <p id="visitor-timezone"></p>
+                  <p id="visitor-coordinates"></p>
+               </div>
+               <div id="home">
+                  <div id="home-container-text">
+                     <h1 class="delayMediumReveal">
+                        <span style="color: white; font-family: 'LiveOverfont', sans-serif;
+                           ">whoami@</span><span style="color: rgb(212, 64, 64); font-family: 'LiveOverfont', sans-serif;"
+                           >blackarch</span><span style="color: white; font-family: 'LiveOverfont', sans-serif;"
+                           >></span><span style="color: red; animation: blink 1s infinite; font-family: 'LiveOverfont', sans-serif;"
+                           >_</span>
+                        <div class="gg" title="404" style="color: white; font-family: 'LiveOverfont', sans-serif;">Pentest & Bug Bounty</div>
+                     </h1>
+                     <p class="typewriter" style="color: white; font-family: 'LiveOverfont', sans-serif; font-size: 23px;">
+                        Segurança ofensiva com ética, precisão e confidencialidade
+                     </p>
+                     <a href="https://github.com/whoami-a51" rel="noopener" style="font-family: 'LiveOverfont', sans-serif; font-size: 25px;" target="_blank" class="delayExtraBigReveal"> ➤ </a>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById('visitor-ip').textContent = 'IP: 127.0.0.1';
+            document.getElementById('visitor-isp').textContent = 'Isp: Localhost';
+            document.getElementById('visitor-location').textContent = 'Address: Simulated City, Region, Country';
+            document.getElementById('visitor-city').textContent = 'City: Simulated City';
+            document.getElementById('visitor-region').textContent = 'Region: Simulated Region';
+            document.getElementById('visitor-country').textContent = 'Country: Simulated Country';
+            document.getElementById('visitor-postal').textContent = 'Postal: 00000-000';
+            document.getElementById('visitor-timezone').textContent = 'Timezone: UTC';
+            document.getElementById('visitor-coordinates').textContent = 'Coordinates: Lat: 0, Lon: 0';
+            });     
+         </script>
+         <section id="s-about">
+            <script type="module">
+               import { characterCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+               let cursorEffect = null;
+               const aboutPhoto = document.getElementById('about-photo');
+               if (aboutPhoto) {
+                 aboutPhoto.addEventListener('mouseenter', () => {
+                   if (!cursorEffect) {
+                     cursorEffect = new characterCursor({
+                       // characters: ["🤍", "🩷", "💜", "🌸"],
+                       // characters: ["🤍", "🩷", "🌸"],
+                       // characters: ["🩷", "🌸"],
+                       characters: ["♥️", "🌸"],
+                       // characters: ["🌸"],
+                       font: "25px serif",
+                       
+                     });
+                   }
+                 });
+                 aboutPhoto.addEventListener('mouseleave', () => {
+                   if (cursorEffect) {
+                     cursorEffect.destroy(); 
+                     cursorEffect = null;
+                   }
+                 });
+               }
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+            <div class="grid-layout">
+               <div id="about">
+                  <div id="about-photo">
+                     <script>
+                        const sound = new Howl({
+                          src: ['assets/music.mp3'],
+                          autoplay: false,
+                          loop: true,
+                          volume: 0,
+                        });
+                        const aboutPhoto = document.getElementById('about-photo');
+                        if (aboutPhoto) {
+                          aboutPhoto.addEventListener('mouseenter', () => {
+                            sound.fade(0, 1, 500);
+                            if (!sound.playing()) {
+                              sound.play();
+                            }
+                          });
+                          aboutPhoto.addEventListener('mouseleave', () => {
+                            sound.fade(1, 0, 1000);
+                          });
+                        }
+                     </script>
+                     <img
+                        src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGxydGE2OWl1MHNxaDU5aGMwemo5NXlldTltZXloOXZwanMycjU2NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/j243B5nTj6aP4tE9fJ/giphy.gif"
+                        width="100px"
+                        height="100px"
+                        alt="whoami"
+                        class="delayMediumReveal"
+                        id="whoami"
+                        />
+                     <div class="about-figure figure-one icon-one delayExtraBigReveal">
+                        <img
+                           src="assets/icons/github1.png"
+                           width="45px"
+                           height="45px"
+                           alt="ícone html"
+                           />
+                     </div>
+                     <div class="about-figure figure-two icon-two delayExtraBigReveal">
+                        <img
+                           src="assets/icons/book.png"
+                           width="45px"
+                           height="45px"
+                           alt="ícone css"
+                           />
+                     </div>
+                     <div class="about-figure figure-three icon-three delayExtraBigReveal">
+                        <img
+                           src="assets/icons/archlinux.png"
+                           width="45px"
+                           height="45px"
+                           alt="ícone javascript"
+                           />
+                     </div>
+                  </div>
+                  <article id="about-text">
+                     <h2 class="delaySmallReveal" style="color: rgb(212, 64, 64); font-family: 'LiveOverfont', sans-serif; font-size: 40px;">
+                        [henry㉿blackarch] ~$ whoami
+                     </h2>
+                     <p class="delayMediumReveal" style="color: white; font-family: 'LiveOverfont', sans-serif; font-size: 27px;">
+                        Comecei a explorar computadores aos 3 anos de idade e, aos 10, já realizava algumas invasões a sistemas. Durante a adolescência, atuei em algumas das maiores equipes hacktivistas do mundo — experiência que desenvolveu meu olhar técnico para identificar falhas e vetores de ataque. Hoje, aplico esse conhecimento de forma ética e profissional, focado na proteção de infraestruturas e dados. Ethical Hacker com experiência prática em testes de intrusão, resposta a incidentes e análise de vulnerabilidades em ambientes reais. Atuo de forma ativa em plataformas como HackerOne e GitHub, sempre comprometido com a segurança do cliente e a privacidade das informações.
+                     </p>
+                  </article>
+               </div>
+            </div>
+         </section>
+         <section id="s-experience">
+         <div class="grid-layout">
+            <h2 class="delaySmallReveal" style="color: rgb(212, 64, 64); font-family: 'LiveOverfont', sans-serif;">
+               <span>/</span>Serviços Ethical Hacking<span>/</span>
+            </h2>
+            <div id="experience">
+               <div class="option-experience intervalCardReveal" id="experience-company">
+                  <div class="company webapp activeExperience">
+                     <h3><span>/</span>Pentest</h3>
+                  </div>
+                  <div class="company network">
+                     <h3><span>/</span>Análises</h3>
+                  </div>
+                  <div class="company mobile">
+                     <h3><span>/</span>Simulações</h3>
+                  </div>
+                  <div class="company cloud">
+                     <h3><span>/</span>Complementares</h3>
+                  </div>
+               </div>
+               <div class="text-experience intervalCardReveal">
+                  <div>
+                     <h4 class="titleExperience">Pentest</h4>
+                  </div>
+                  <h5 class="companyExperience">Testes de Penetração</h5>
+                  <ul class="changeExperience" style="list-style-type: disc; padding-left: 1.5rem; font-size: 24px; line-height: 1.5; color: white;">
+                     <li>Aplicações web, mobile e redes</li>
+                     <li>Infraestruturas e dispositivos IoT</li>
+                     <li>Portões eletrônicos, smart locks e câmeras IP</li>
+                     <li>Ambientes Industriais (SCADA, ICS, PLCs)</li>
+                     <li>Protocolos de Telecomunicações (4G/5G, VoIP, SIP, SS7)</li>
+                  </ul>
+               </div>
+               <div class="text-experience intervalCardReveal" style="margin-top: 2rem;">
+                  <div>
+                     <h4 class="titleExperience">Análises</h4>
+                  </div>
+                  <h5 class="companyExperience">Avaliações de Segurança Pessoal</h5>
+                  <ul class="changeExperience" style="list-style-type: disc; padding-left: 1.5rem; font-size: 24px; line-height: 1.5; color: white;">
+                     <li>Contas pessoais (Instagram, e-mail, etc)</li>
+                     <li>Dispositivos pessoais (Android, iOS, macOS, Windows e Linux)</li>
+                     <li>Carteiras de Bitcoin</li>
+                  </ul>
+               </div>
+               <div class="text-experience intervalCardReveal" style="margin-top: 2rem;">
+                  <div>
+                     <h4 class="titleExperience">Simulações</h4>
+                  </div>
+                  <h5 class="companyExperience">Respostas a incidentes</h5>
+                  <ul class="changeExperience" style="list-style-type: disc; padding-left: 1.5rem; font-size: 24px; line-height: 1.5; color: white;">
+                     <li>Phishing e Engenharia Social controlados</li>
+                     <li>Malwares controlados</li>
+                     <li>DDoS e DoS controlados</li>
+                  </ul>
+               </div>
+               <div class="text-experience intervalCardReveal" style="margin-top: 2rem;">
+                  <div>
+                     <h4 class="titleExperience">Complementares</h4>
+                  </div>
+                  <h5 class="companyExperience">Serviços complementares e consultorias</h5>
+                  <ul class="changeExperience" style="list-style-type: disc; padding-left: 1.5rem; font-size: 24px; line-height: 1.5; color: white;">
+                     <li>OWASP Top 10, CVEs</li>
+                     <li>Relatórios técnicos e executivos</li>
+                     <li>Consultoria para BUg Bounty</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <section id="s-projects">
+            <div class="grid-layout">
+               <h2 class="delaySmallReveal" style="color: rgb(212, 64, 64) 'LiveOverfont', sans-serif; font-size: 40px;">Hardware Hacking para Pentester<span>$</span></h2>
+               <div id="projects">
+                  <article class="layout">
+                     <h3 style="color: rgb(199, 199, 199); font-family: 'LiveOverfont', sans-serif; font-size: 28px;"><span>/root/</span>Arduinos<span>/</span></h3>
+                     <p>
+                        Arduinos com HID programados com payloads (Windows e Linux)
+                     </p>
+                  </article>
+                  <article class="layout">
+                     <h3 style="color: rgb(199, 199, 199); font-family: 'LiveOverfont', sans-serif; font-size: 28px;"><span>/root/</span>Raspberry Pis<span>/</span></h3>
+                     <p>
+                        Raspberry Pis programados com payloads (Windows e Linux)
+                     </p>
+                  </article>
+                  <article class="layout">
+                     <h3 style="color: rgb(199, 199, 199); font-family: 'LiveOverfont', sans-serif; font-size: 28px;"><span>/root/</span>Outros dispositivos<span>/</span></h3>
+                     <p>
+                        Construção de outros dispositivos eletrônicos para hardware hacking 
+                     </p>
+                  </article>
+               </div>
+            </div>
+         </section>
+         <section id="s-skills">
+            <div class="grid-layout">
+               <div id="skills">
+                  <article id="skills-text">
+                     <h2 class="delaySmallReveal" style="color: rgb(212, 64, 64) 'LiveOverfont', sans-serif; font-size: 38px;">Quer comprar um dispositivo, proteger seu sistema ou descobrir vulnerabilidades antes dos atacantes? | contato<span>$</span></h2>
+                     <p class="delayMediumReveal changeDescription">
+                        <span>//</span>envie-me um e-mail | 
+                        <a href="mailto:whoami.a51@protonmail.com" style="color: inherit; text-decoration: underline;">
+                        whoami.a51@protonmail.com
+                        </a>
+                        <span>></span>
+                     </p>
+                  </article>
+                  <div id="skills-cards">
+                     <article class="icon1 intervalCardReveal">
+                        <span class="skills-cards-name-high">Bash</span>
+                        <img
+                           src="assets/icons/bash.png"
+                           width="60px"
+                           height="60px"
+                           alt="whoami"
+                           class="skills-icons"
+                           />
+                     </article>
+                     <article class="icon2 intervalCardReveal">
+                        <span class="skills-cards-name-high">Burpsuite</span>
+                        <img
+                           src="assets/icons/burpsuite.png"
+                           width="60px"
+                           height="60px"
+                           alt="whoami"
+                           class="skills-icons"
+                           />
+                     </article>
+                     <article class="icon3 intervalCardReveal">
+                        <span class="skills-cards-name-high">Wireshark</span>
+                        <img
+                           src="assets/icons/wireshark.png"
+                           width="60px"
+                           height="60px"
+                           alt="whoami"
+                           class="skills-icons"
+                           />
+                     </article>
+                     <article class="icon4 intervalCardReveal">
+                        <span class="skills-cards-name-high">Maltego</span>
+                        <img
+                           src="assets/icons/maltego.png"
+                           width="60px"
+                           height="60px"
+                           alt="whoami"
+                           class="skills-icons"
+                           />
+                     </article>
+                     <article class="icon5 intervalCardReveal">
+                        <span class="skills-cards-name-low">Arduino</span>
+                        <img
+                           src="assets/icons/arduino.png"
+                           width="60px"
+                           height="60px"
+                           alt="whoami"
+                           class="skills-icons"
+                           />
+                     </article>
+                     <article class="icon6 intervalCardReveal">
+                        <span class="skills-cards-name-low">C++</span>
+                        <img
+                           src="assets/icons/C%2b%2b.png"
+                           width="60px"
+                           height="60px"
+                           alt="whoami"
+                           class="skills-icons"
+                           />
+                     </article>
+                     <article class="icon7 intervalCardReveal">
+                        <span class="skills-cards-name-low"
+                           >Ghidra</span
+                           >
+                        <img
+                           src="assets/icons/ghidra.png"
+                           width="60px"
+                           height="60px"
+                           alt="whoami"
+                           class="skills-icons"
+                           />
+                     </article>
+                     <article class="icon8 intervalCardReveal">
+                        <span class="skills-cards-name-low">Python</span>
+                        <img
+                           src="assets/icons/python.png"
+                           width="60px"
+                           height="60px"
+                           alt="whoami"
+                           class="skills-icons"
+                           />
+                     </article>
+                  </div>
+               </div>
+            </div>
+            <footer>
+               <div class="grid-layout">
+                  <p id="direitos-autorais">© 2025 Whoami-a51</p>
+                  <div>
+                     <p>Hack the system, protect the data.</p>
+                     <img
+                        src="assets/icons/github1.png"
+                        alt="whoami"
+                        width="60px"
+                        height="60px"
+                        />
+                  </div>
+               </div>
+            </footer>
+         </section>
+      </main>
+      <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+      <script type="module" src="assets/js/main.js"></script>
+<script>
+  const btnTranslate = document.getElementById('btn-translate');
+  let isEnglish = false;
+
+  btnTranslate.addEventListener('click', () => {
+    if (!isEnglish) {
+      // Tradução para inglês
+      document.querySelector('h1 .gg').textContent = 'Pentest & Bug Bounty';
+      document.querySelector('#s-about p').textContent = `I started exploring computers at the age of 3, and by 10 I was performing system intrusions. During my teens, I worked with some of the biggest hacktivist teams worldwide, which sharpened my skills to identify vulnerabilities and attack vectors. Today, I apply this knowledge ethically and professionally, focusing on infrastructure and data protection. Ethical Hacker with practical experience in penetration testing, incident response, and vulnerability analysis in real environments. Active on platforms like HackerOne and GitHub, always committed to client security and information privacy.`;
+      document.querySelector('a[href="#s-home"]').textContent = 'HOME/';
+      // Continue adicionando outras traduções necessárias...
+
+      btnTranslate.textContent = 'PT/';
+      isEnglish = true;
+    } else {
+      // Voltar para português
+      document.querySelector('h1 .gg').textContent = 'Pentest & Bug Bounty';
+      document.querySelector('#s-about p').textContent = `Comecei a explorar computadores aos 3 anos de idade e, aos 10, já realizava algumas invasões a sistemas. Durante a adolescência, atuei em algumas das maiores equipes hacktivistas do mundo — experiência que desenvolveu meu olhar técnico para identificar falhas e vetores de ataque. Hoje, aplico esse conhecimento de forma ética e profissional, focado na proteção de infraestruturas e dados. Ethical Hacker com experiência prática em testes de intrusão, resposta a incidentes e análise de vulnerabilidades em ambientes reais. Atuo de forma ativa em plataformas como HackerOne e GitHub, sempre comprometido com a segurança do cliente e a privacidade das informações.`;
+      document.querySelector('a[href="#s-home"]').textContent = 'HOME/';
+      btnTranslate.textContent = 'EN/';
+      isEnglish = false;
+    }
+  });
+</script>
+   </body>
+</html>
