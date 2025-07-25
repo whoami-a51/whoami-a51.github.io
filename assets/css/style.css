@@ -2124,4 +2124,41 @@ footer .grid-layout div img {
   margin-left: calc(50% - 50vw); /* Remove o centramento que limita largura */
   padding: 2rem 0;          /* Dá um espaçamento vertical legal */
 }
+/* Menu principal mobile escondido */
+#menu {
+  display: none;
+  flex-direction: column;
+}
+
+/* Mostrar menu quando ativo */
+#menu.active {
+  display: flex;
+}
+
+/* Submenus escondidos */
+#menu li ul {
+  display: none;
+  flex-direction: column;
+}
+
+/* Submenu ativo no mobile */
+#menu li.active > ul {
+  display: flex;
+}
+
+/* Dropdown no desktop (hover) já existente */
+@media (min-width: 769px) {
+  #menu {
+    display: flex !important;
+  }
+  #menu li ul {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  #menu li:hover > ul {
+    display: block;
+  }
+}
 
