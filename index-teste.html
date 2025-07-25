@@ -488,5 +488,25 @@
     }
   });
 </script>
+      document.addEventListener('DOMContentLoaded', () => {
+  const btnMenu = document.getElementById('btn-menu');
+  const menu = document.getElementById('menu');
+
+  btnMenu.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  const submenuLinks = document.querySelectorAll('#menu li.has-submenu > a');
+
+  submenuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // impede o link padrão
+
+      const parentLi = link.parentElement;
+
+      parentLi.classList.toggle('active');
+    });
+  });
+});
    </body>
 </html>
