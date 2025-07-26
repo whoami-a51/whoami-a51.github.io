@@ -70,5 +70,27 @@ hoverChangeDescription(
 );
 hoverChangeDescription(
   ".icon8",
+  document.addEventListener('DOMContentLoaded', () => {
+    const btnMenu = document.getElementById('btn-menu');
+    const menu = document.getElementById('menu');
+
+    // Toggle do menu principal (mobile)
+    btnMenu.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+
+    // Toggle dos submenus (mobile)
+    const submenuLinks = document.querySelectorAll('.has-submenu > a');
+    submenuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const parentLi = link.parentElement;
+                parentLi.classList.toggle('active');
+            }
+        });
+    });
+});
+
   "Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically-typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional programming."
 );
