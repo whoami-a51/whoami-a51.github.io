@@ -95,25 +95,32 @@
          }
          });
       </script>
-      <header>
-         <div class="grid-layout">
+    <header>
+        <div class="grid-layout">
             <nav>
-               <img src="assets/icons/hacker.png" alt="Hacker icon" width="90px" height="90px"/>
-               <div class="mobile-menu">
-                  <div class="line1"></div>
-                  <div class="line2"></div>
-                  <div class="line3"></div>
-               </div>
-               <ul class="nav-list">
-                  <li><a href="#s-home" style="color: rgb(220, 220, 220); font-family: 'Rajdhani',  sans-serif;">HOME<span>/</span></a></li>
-                  <li><a href="#s-about" style="color: rgb(220, 220, 220); font-family: 'Rajdhani', sans-serif;">SOBRE<span>/</span></a></li>
-                  <li><a href="#s-experience" style="color: rgb(220, 220, 220); font-family: 'Rajdhani', sans-serif;">SERVIÇOS<span>/</span></a></li>
-                  <li><a href="#s-projects" style="color: rgb(220, 220, 220); font-family: 'Rajdhani', sans-serif;">HARDWARE HACKING<span>/</span></a></li>
-                  <li><a href="#s-skills" style="color: rgb(220, 220, 220); font-family: 'Rajdhani', sans-serif;">CONTATO<span>/</span></a></li>
-               </ul>
+                <img src="assets/icons/hacker.png" alt="Hacker icon" width="90px" height="90px"/>
+                <div class="mobile-menu" id="btn-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="nav-list" id="menu">
+                    <li><a href="#s-home">HOME<span>/</span></a></li>
+                    <li><a href="#s-about">SOBRE<span>/</span></a></li>
+                    <li class="has-submenu">
+                        <a href="#s-experience">SERVIÇOS<span>/</span></a>
+                        <ul class="submenu">
+                            <li><a href="#pentest">Pentest</a></li>
+                            <li><a href="#analises">Análises</a></li>
+                            <li><a href="#complementos">Complementos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#s-projects">HARDWARE HACKING<span>/</span></a></li>
+                    <li><a href="#s-skills">CONTATO<span>/</span></a></li>
+                </ul>
             </nav>
-         </div>
-      </header>
+        </div>
+    </header>
       <main>
          <section id="s-home">
             <div class="grid-layout">
