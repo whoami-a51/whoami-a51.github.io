@@ -1,322 +1,293 @@
 <!DOCTYPE html>
 <!-- desenvolvido por whoami-a51 :) -->
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title data-pt="Pentest - Segurança Ofensiva" data-en="Pentest - Offensive Security">Pentest - Segurança Ofensiva</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Share Tech Mono', monospace;
-      background-color: #0d1117;
-      color: #c9d1d9;
-    }
-
-    header {
-      background-color: #161b22;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid #58a6ff;
-    }
-
-    header h1 {
-      margin: 0;
-      color: #58a6ff;
-      font-size: 2.5em;
-    }
-
-    nav {
-      background-color: #21262d;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: #8b949e;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 1.2em;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #58a6ff;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .service {
-      background-color: #161b22;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-left: 4px solid #58a6ff;
-      border-radius: 8px;
-    }
-
-    .service h2 {
-      color: #58a6ff;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #8b949e;
-    }
-  </style>
-</head>
-<body>
-    <audio autoplay loop>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title data-pt="Pentest - Segurança Ofensiva" data-en="Pentest - Offensive Security">Pentest - Segurança Ofensiva</title>
+      <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+      <style>
+         @media screen and (max-width: 768px) {
+         nav {
+         display: none;
+         }
+         }
+         body {
+         margin: 0;
+         font-family: 'Share Tech Mono', monospace;
+         background-color: #0d1117;
+         color: #c9d1d9;
+         }
+         header {
+         background-color: #161b22;
+         padding: 20px;
+         text-align: center;
+         border-bottom: 2px solid #58a6ff;
+         }
+         header h1 {
+         margin: 0;
+         color: #58a6ff;
+         font-size: 2.5em;
+         }
+         nav {
+         background-color: #21262d;
+         padding: 10px;
+         text-align: center;
+         }
+         nav a {
+         color: #8b949e;
+         text-decoration: none;
+         margin: 0 15px;
+         font-size: 1.2em;
+         transition: color 0.3s;
+         }
+         nav a:hover {
+         color: #58a6ff;
+         }
+         .container {
+         max-width: 1000px;
+         margin: 40px auto;
+         padding: 0 20px;
+         }
+         .service {
+         background-color: #161b22;
+         padding: 20px;
+         margin-bottom: 20px;
+         border-left: 4px solid #58a6ff;
+         border-radius: 8px;
+         }
+         .service h2 {
+         color: #58a6ff;
+         }
+         .footer {
+         text-align: center;
+         padding: 20px;
+         font-size: 0.9em;
+         color: #8b949e;
+         }
+      </style>
+   </head>
+   <body>
+      <audio autoplay loop>
          <source src="music.mp3" type="audio/mpeg" />
          Seu navegador não suporta áudio HTML5.
       </audio>
-
       <style>
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    background-color: #1a1a1a;
-    border: 1px solid #00aaff;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    width: 200px;
-    z-index: 1000;
-    border-radius: 5px;
-  }
-
-  .mobile-menu a {
-    padding: 12px;
-    color: white;
-    text-decoration: none;
-    border-bottom: 1px solid #333;
-    font-family: 'Courier New', monospace;
-  }
-
-  .mobile-menu a:hover {
-    background-color: #333;
-  }
-
-  .menu-toggle {
-    display: none;
-    font-size: 24px;
-    color: #00aaff;
-    cursor: pointer;
-    font-family: 'Courier New', monospace;
-  }
-
-  @media (max-width: 768px) {
-    .desktop-menu {
-      display: none;
-    }
-
-    .menu-toggle {
-      display: block;
-    }
-  }
-</style>
-
-<!-- Botão de menu hamburguer -->
-<div style="text-align:right; padding: 10px;">
-  <span class="menu-toggle" onclick="toggleMenu()">☰ Menu</span>
-</div>
-
-<!-- Menu Mobile -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#pentest" data-pt="Pentest" data-en="Pentest">Pentest</a>
-  <a href="#análises" data-pt="Análises" data-en="Analysis">Análises</a>
-  <a href="#simulações" data-pt="Simulações" data-en="Simulations">Simulações</a>
-  <a href="#hardware" data-pt="Hardware" data-en="Hardware">Hardware</a>
-  <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
-  <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
-</div>
-
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-  }
-
-  // Função de tradução básica
-  document.getElementById('language-selector')?.addEventListener('change', function () {
-    const lang = this.value;
-    document.querySelectorAll('[data-pt], [data-en]').forEach(el => {
-      if (el.dataset[lang]) {
-        el.textContent = el.dataset[lang];
-      }
-    });
-  });
-</script>
-
-
-  <header>
-    <h1>Pentest & Bug Bounty</h1>
-    <p data-pt="Segurança Ofensiva • Hacking Ético • Red Team" data-en="Offensive Security • Ethical Hacking • Red Team">Segurança Ofensiva • Hacking Ético • Red Team</p>
-  </header>
-
-  <nav>
-    <a href="#pentest" data-pt="Pentest" data-en="Pentest">Pentest</a>
-    <a href="#análises" data-pt="Análises" data-en="Analyses">Análises</a>
-    <a href="#simulações" data-pt="Simulações" data-en="Simulations">Simulações</a>
-    <a href="#hardware" data-pt="Hardware" data-en="Hardware">Hardware</a>
-    <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
-    <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
-  </nav>
-
-<div style="text-align:center; margin: 10px 0;">
-  <select id="language-selector" aria-label="Selecione o idioma / Select language" style="font-family: 'Courier New', monospace; padding:5px; border:1px solid #00aaff; border-radius:5px; background:#1a1a1a; color:#00aaff;">
-    <option value="pt" selected>Português</option>
-    <option value="en">English</option>
-  </select>
-</div>
-
-  <div class="container">
-    <div class="service" id="pentest">
-      <h2 data-pt="🕷️ Testes de Penetração" data-en="🕷️ Penetration Testing">🕷️ Testes de Penetração</h2>
-      <p data-pt="Avaliação aprofundada da segurança de sistemas, redes e dispositivos por meio de testes de penetração (Pentest), com entrega de relatórios completos contendo evidências técnicas, análise de riscos e recomendações de mitigação."
-         data-en="In-depth assessment of the security of systems, networks and devices through penetration testing (Pentest), with delivery of complete reports containing technical evidence, risk analysis and mitigation recommendations.">
-         Avaliação aprofundada da segurança de sistemas, redes e dispositivos por meio de testes de penetração (Pentest), com entrega de relatórios completos contendo evidências técnicas, análise de riscos e recomendações de mitigação.
-      </p>
-      <ul>
-        <li data-pt="Testes de penetração em aplicações web, mobile e redes" data-en="Penetration testing of web, mobile and network applications">Testes de penetração em aplicações web, mobile e redes</li>
-        <li data-pt="Testes de invasão em infraestruturas e dispositivos IoT" data-en="Intrusion tests on infrastructures and IoT devices">Testes de invasão em infraestruturas e dispositivos IoT</li>
-        <li data-pt="Testes residenciais de invasão controlados (portões eletrônicos, smart locks, câmeras IP)" data-en="Controlled residential intrusion tests (electronic gates, smart locks, IP cameras)">Testes residenciais de invasão controlados (portões eletrônicos, smart locks, câmeras IP)</li>
-        <li data-pt="Testes de segurança em ambientes industriais (SCADA, ICS, PLCs)" data-en="Security tests in industrial environments (SCADA, ICS, PLCs)">Testes de segurança em ambientes industriais (SCADA, ICS, PLCs)</li>
-        <li data-pt="Testes de segurança em redes e protocolos de telecomunicações (redes 4G/5G, VoIP, SIP, SS7)" data-en="Security tests on telecom networks and protocols (4G/5G networks, VoIP, SIP, SS7)">Testes de segurança em redes e protocolos de telecomunicações (redes 4G/5G, VoIP, SIP, SS7)</li>
-      </ul>
-    </div>
-
-    <div class="service" id="análises">
-      <h2 data-pt="🕷️ Análises de Segurança" data-en="🕷️ Security Analyses">🕷️ Análises de Segurança</h2>
-      <p data-pt="Avaliação detalhada da segurança pessoal com emissão de relatórios completos, identificando vulnerabilidades e apresentando recomendações práticas para mitigar riscos e proteger suas informações sensíveis." data-en="Detailed personal security assessment with comprehensive reporting, identifying vulnerabilities, and providing practical recommendations to mitigate risks and protect your sensitive information.">
-        Avaliação detalhada da segurança pessoal com emissão de relatórios completos, identificando vulnerabilidades e apresentando recomendações práticas para mitigar riscos e proteger suas informações sensíveis.</p>
-      <ul>
-        <li data-pt="Análise de segurança em contas pessoais (Instagram, e-mail, etc)" data-en="Security analysis on personal accounts (Instagram, email, etc)">Análise de segurança em contas pessoais (Instagram, e-mail, etc)</li>
-        <li data-pt="Análise de segurança em dispositivos pessoais (Android, iOS, macOS, Windows e Linux)" data-en="Security analysis on personal devices (Android, iOS, macOS, Windows and Linux)">Análise de segurança em dispositivos pessoais (Android, iOS, macOS, Windows e Linux)</li>
-        <li data-pt="Análise de segurança em carteiras de Bitcoin" data-en="Security analysis on Bitcoin wallets">Análise de segurança em carteiras de Bitcoin</li>
-      </ul>
-    </div>
-
-    <div class="service" id="simulações">
-      <h2 data-pt="🕷️ Simulações" data-en="🕷️ Simulations">🕷️ Simulações</h2>
-      <p data-pt="Realização de simulações controladas de ataques maliciosos para testar e fortalecer a capacidade de resposta a incidentes, garantindo maior preparo e resiliência da sua infraestrutura de segurança." data-en="Conducting controlled simulations of malicious attacks to test and strengthen incident response capabilities, ensuring greater preparedness and resilience of your security infrastructure.">
-        Realização de simulações controladas de ataques maliciosos para testar e fortalecer a capacidade de resposta a incidentes, garantindo maior preparo e resiliência da sua infraestrutura de segurança.</p>
-      <ul>
-        <li data-pt="Simulações controladas de phishing e engenharia social" data-en="Controlled phishing and social engineering simulations">Simulações controladas de phishing e engenharia social</li>
-        <li data-pt="Simulações de ataques com malwares" data-en="Simulations of malware attacks">Simulações de ataques com malwares</li>
-        <li data-pt="Simulações controladas de ataques DDoS ou DoS" data-en="Controlled DDoS or DoS attack simulations">Simulações controladas de ataques DDoS ou DoS</li>
-      </ul>
-    </div>
-
-    <div class="service" id="complementos">
-      <h2 data-pt="🕷️ Complementos" data-en="🕷️ Add-ons">🕷️ Complementos</h2>
-      <p data-pt="Complementos aplicados a todos os serviços" data-en="Additions to all types of services offered.">Complementos aplicados a todos os serviços.</p>
-      <ul>
-        <li data-pt="Identificação de vulnerabilidades (OWASP Top 10, CVEs)" data-en="Identification of vulnerabilities (OWASP Top 10, CVEs)">Identificação de vulnerabilidades (OWASP Top 10, CVEs)</li>
-        <li data-pt="Emissão de relatórios técnicos e executivos com plano de mitigação" data-en="Issuance of technical and executive reports with mitigation plan">Emissão de relatórios técnicos e executivos com plano de mitigação</li>
-        <li data-pt="Consultoria para programas de Bug Bounty" data-en="Consulting for Bug Bounty programs">Consultoria para programas de Bug Bounty</li>
-      </ul>
-      <h3 data-pt="Testes realizados nos modos Black Box, Grey Box e White Box, em conformidade com a legislação vigente no país." data-en="Tests performed in Black Box, Grey Box and White Box modes, in accordance with the current legislation in the country.">Testes realizados nos modos Black Box, Grey Box e White Box, em conformidade com a legislação vigente no país.</h3>
-      <p data-pt="Se o seu objetivo específico de segurança não estiver listado aqui, entre em contato — avaliarei sua solicitação e proporei uma solução sob medida para atender às suas necessidades." data-en="If your specific security objective is not listed here, contact me — I will evaluate your request and propose a tailored solution to meet your needs.">Se o seu objetivo específico de segurança não estiver listado aqui, entre em contato — avaliarei sua solicitação e proporei uma solução sob medida para atender às suas necessidades.</p>
-    </div>
-
-    <div class="service" id="hardware">
-      <h2 data-pt="🕷️ Hardware Hacking" data-en="🕷️ Hardware Hacking">🕷️ Hardware Hacking</h2>
-      <p data-pt="Dispositivos físicos customizados para Pentesters, prontos para testes avançados de segurança em ambientes Windows e Linux." data-en="Customized physical devices for Pentesters, ready for advanced security testing in Windows and Linux environments.">Dispositivos físicos customizados para Pentesters, prontos para testes avançados de segurança em ambientes Windows e Linux.</p>
-      <ul>
-        <li data-pt="Arduinos com HID programados com payloads (Windows e Linux)" data-en="Arduinos with HID programmed payloads (Windows and Linux)">Arduinos com HID programados com payloads (Windows e Linux)</li>
-        <li data-pt="Raspberry Pis programados com payloads (Windows e Linux)" data-en="Raspberry Pis programmed with payloads (Windows and Linux)">Raspberry Pis programados com payloads (Windows e Linux)</li>
-        <li data-pt="Dispositivos personalizados sob encomenda" data-en="Other physical devices on order">Dispositivos personalizados sob encomenda</li>
-      </ul>
-    </div>
-
-    <div class="service" id="sobre">
-      <h2 data-pt="Sobre" data-en="About">Sobre</h2>
-      <p data-pt="Comecei a explorar computadores aos 3 anos de idade e, aos 10, já realizava algumas invasões a sistemas. Durante a adolescência, atuei em algumas das maiores equipes hacktivistas do mundo — experiência que desenvolveu meu olhar técnico para identificar falhas e vetores de ataque. Hoje, aplico esse conhecimento de forma ética e profissional, focado na proteção de infraestruturas e dados. Hacker ético com experiência prática em testes de intrusão, resposta a incidentes e análise de vulnerabilidades em ambientes reais."
-         data-en="I started exploring computers at 3 years old and by 10 I was already performing some system intrusions. During adolescence, I worked in some of the largest hacktivist teams in the world — experience that developed my technical eye to identify flaws and attack vectors. Today, I apply this knowledge ethically and professionally, focusing on protecting infrastructures and data. Ethical hacker with practical experience in intrusion testing, incident response, and vulnerability analysis in real environments.">
-         Comecei a explorar computadores aos 3 anos de idade e, aos 10, já realizava algumas invasões a sistemas. Durante a adolescência, atuei em algumas das maiores equipes hacktivistas do mundo — experiência que desenvolveu meu olhar técnico para identificar falhas e vetores de ataque. Hoje, aplico esse conhecimento de forma ética e profissional, focado na proteção de infraestruturas e dados. Hacker ético com experiência prática em testes de intrusão, resposta a incidentes e análise de vulnerabilidades em ambientes reais.
-      </p>
-      <p data-pt="Atuo de forma ativa em plataformas como TryHackMe e GitHub, sempre comprometido com a segurança do cliente e a privacidade das informações."
-         data-en="I am actively involved in platforms like TryHackMe and GitHub, always committed to client security and information privacy.">
-         Atuo de forma ativa em plataformas como TryHackMe e GitHub, sempre comprometido com a segurança do cliente e a privacidade das informações.
-      </p>
-    </div>
-
-    <div class="service" id="contato">
-      <h2 data-pt="Contato" data-en="Contact">Contato</h2>
-      <p data-pt="Quer comprar um dispositivo, proteger seu sistema ou descobrir vulnerabilidades antes dos atacantes?" data-en="Want to buy a device, protect your system, or discover vulnerabilities before attackers?">Quer comprar um dispositivo, proteger seu sistema ou descobrir vulnerabilidades antes dos atacantes?</p>
-      <ul>
-<li>
-  <strong data-pt="Envie-me um e-mail:" data-en="Send me an email:">
-    Envie-me um e-mail:
-  </strong>
-  <a class="email-link" href="mailto:whoami.a51@protonmail.com">whoami.a51@protonmail.com</a>
-</li>
-        <li data-pt="Chave PGP disponível sob solicitação." data-en="PGP key available upon request.">Chave PGP disponível sob solicitação.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer" data-pt="© 2025 | Whoami-a51 • Segurança Ofensiva • Hackeie o sistema o sistema, proteja os dados." data-en="© 2025 | Whoami-a51 • Offensive Security • Hack the system, protect the data.">
-    © 2025 | Whoami-a51 • Segurança Ofensiva • Hackeie o sistema, proteja os dados.
-  </div>
-
-  <button onclick="scrollToTop()" id="scrollTopBtn">↑</button>
-
-<style>
-  #scrollTopBtn {
-    display: none; /* Escondido por padrão */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #007bff; /* Azul vibrante */
-    color: white;
-    cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-family: 'VT323', monospace;
-    font-size: 20px;
-    box-shadow: 0 0 10px #007bff;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  #scrollTopBtn:hover {
-    background-color: #0056b3;
-  }
-</style>
-
-  <script>
-  window.onscroll = function () {
-    const btn = document.getElementById("scrollTopBtn");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
-  };
-
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
-
-<script>
-  document.getElementById('language-selector').addEventListener('change', function () {
-    const lang = this.value;
-    document.querySelectorAll('[data-pt][data-en]').forEach(el => {
-      el.textContent = el.getAttribute('data-' + lang);
-    });
-  });
-</script>
-
-</body>
+         .mobile-menu {
+         display: none;
+         flex-direction: column;
+         background-color: #1a1a1a;
+         border: 1px solid #00aaff;
+         position: absolute;
+         top: 60px;
+         right: 10px;
+         width: 200px;
+         z-index: 1000;
+         border-radius: 5px;
+         }
+         .mobile-menu a {
+         padding: 12px;
+         color: white;
+         text-decoration: none;
+         border-bottom: 1px solid #333;
+         font-family: 'Courier New', monospace;
+         }
+         .mobile-menu a:hover {
+         background-color: #333;
+         }
+         .menu-toggle {
+         display: none;
+         font-size: 24px;
+         color: #00aaff;
+         cursor: pointer;
+         font-family: 'Courier New', monospace;
+         }
+         @media (max-width: 768px) {
+         .desktop-menu {
+         display: none;
+         }
+         .menu-toggle {
+         display: block;
+         }
+         }
+      </style>
+      <!-- Botão de menu hamburguer -->
+      <div style="text-align:right; padding: 10px;">
+         <span class="menu-toggle" onclick="toggleMenu()">☰ Menu</span>
+      </div>
+      <!-- Menu Mobile -->
+      <div class="mobile-menu" id="mobileMenu">
+         <a href="#pentest" data-pt="Pentest" data-en="Pentest">Pentest</a>
+         <a href="#análises" data-pt="Análises" data-en="Analysis">Análises</a>
+         <a href="#simulações" data-pt="Simulações" data-en="Simulations">Simulações</a>
+         <a href="#hardware" data-pt="Hardware" data-en="Hardware">Hardware</a>
+         <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
+         <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
+      </div>
+      <script>
+         function toggleMenu() {
+           const menu = document.getElementById("mobileMenu");
+           menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+         }
+         
+         // Função de tradução básica
+         document.getElementById('language-selector')?.addEventListener('change', function () {
+           const lang = this.value;
+           document.querySelectorAll('[data-pt], [data-en]').forEach(el => {
+             if (el.dataset[lang]) {
+               el.textContent = el.dataset[lang];
+             }
+           });
+         });
+      </script>
+      <header>
+         <h1>Pentest</h1>
+         <p data-pt="Segurança Ofensiva • Hacking Ético • Red Team" data-en="Offensive Security • Ethical Hacking • Red Team">Segurança Ofensiva • Hacking Ético • Red Team</p>
+      </header>
+      <nav>
+         <a href="#pentest" data-pt="Pentest" data-en="Pentest">Pentest</a>
+         <a href="#análises" data-pt="Análises" data-en="Analyses">Análises</a>
+         <a href="#simulações" data-pt="Simulações" data-en="Simulations">Simulações</a>
+         <a href="#hardware" data-pt="Hardware" data-en="Hardware">Hardware</a>
+         <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
+         <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
+      </nav>
+      <div style="text-align:center; margin: 10px 0;">
+         <select id="language-selector" aria-label="Selecione o idioma / Select language" style="font-family: 'Courier New', monospace; padding:5px; border:1px solid #00aaff; border-radius:5px; background:#1a1a1a; color:#00aaff;">
+            <option value="pt" selected>Português</option>
+            <option value="en">English</option>
+         </select>
+      </div>
+      <div class="container">
+         <div class="service" id="pentest">
+            <h2 data-pt="🕷️ Testes de Penetração" data-en="🕷️ Penetration Testing">🕷️ Testes de Penetração</h2>
+            <p data-pt="Avaliação aprofundada da segurança de sistemas, redes e dispositivos por meio de testes de penetração (Pentest), com entrega de relatórios completos contendo evidências técnicas, análise de riscos e recomendações de mitigação."
+               data-en="In-depth assessment of the security of systems, networks and devices through penetration testing (Pentest), with delivery of complete reports containing technical evidence, risk analysis and mitigation recommendations.">
+               Avaliação aprofundada da segurança de sistemas, redes e dispositivos por meio de testes de penetração (Pentest), com entrega de relatórios completos contendo evidências técnicas, análise de riscos e recomendações de mitigação.
+            </p>
+            <ul>
+               <li data-pt="Testes de penetração em aplicações web, mobile e redes" data-en="Penetration testing of web, mobile and network applications">Testes de penetração em aplicações web, mobile e redes</li>
+               <li data-pt="Testes de invasão em infraestruturas e dispositivos IoT" data-en="Intrusion tests on infrastructures and IoT devices">Testes de invasão em infraestruturas e dispositivos IoT</li>
+               <li data-pt="Testes residenciais de invasão controlados (portões eletrônicos, smart locks, câmeras IP)" data-en="Controlled residential intrusion tests (electronic gates, smart locks, IP cameras)">Testes residenciais de invasão controlados (portões eletrônicos, smart locks, câmeras IP)</li>
+               <li data-pt="Testes de segurança em ambientes industriais (SCADA, ICS, PLCs)" data-en="Security tests in industrial environments (SCADA, ICS, PLCs)">Testes de segurança em ambientes industriais (SCADA, ICS, PLCs)</li>
+               <li data-pt="Testes de segurança em redes e protocolos de telecomunicações (redes 4G/5G, VoIP, SIP, SS7)" data-en="Security tests on telecom networks and protocols (4G/5G networks, VoIP, SIP, SS7)">Testes de segurança em redes e protocolos de telecomunicações (redes 4G/5G, VoIP, SIP, SS7)</li>
+            </ul>
+         </div>
+         <div class="service" id="análises">
+            <h2 data-pt="🕷️ Análises de Segurança" data-en="🕷️ Security Analyses">🕷️ Análises de Segurança</h2>
+            <p data-pt="Avaliação detalhada da segurança pessoal com emissão de relatórios completos, identificando vulnerabilidades e apresentando recomendações práticas para mitigar riscos e proteger suas informações sensíveis." data-en="Detailed personal security assessment with comprehensive reporting, identifying vulnerabilities, and providing practical recommendations to mitigate risks and protect your sensitive information.">
+               Avaliação detalhada da segurança pessoal com emissão de relatórios completos, identificando vulnerabilidades e apresentando recomendações práticas para mitigar riscos e proteger suas informações sensíveis.
+            </p>
+            <ul>
+               <li data-pt="Análise de segurança em contas pessoais (Instagram, e-mail, etc)" data-en="Security analysis on personal accounts (Instagram, email, etc)">Análise de segurança em contas pessoais (Instagram, e-mail, etc)</li>
+               <li data-pt="Análise de segurança em dispositivos pessoais (Android, iOS, macOS, Windows e Linux)" data-en="Security analysis on personal devices (Android, iOS, macOS, Windows and Linux)">Análise de segurança em dispositivos pessoais (Android, iOS, macOS, Windows e Linux)</li>
+               <li data-pt="Análise de segurança em carteiras de Bitcoin" data-en="Security analysis on Bitcoin wallets">Análise de segurança em carteiras de Bitcoin</li>
+            </ul>
+         </div>
+         <div class="service" id="simulações">
+            <h2 data-pt="🕷️ Simulações" data-en="🕷️ Simulations">🕷️ Simulações</h2>
+            <p data-pt="Realização de simulações controladas de ataques maliciosos para testar e fortalecer a capacidade de resposta a incidentes, garantindo maior preparo e resiliência da sua infraestrutura de segurança." data-en="Conducting controlled simulations of malicious attacks to test and strengthen incident response capabilities, ensuring greater preparedness and resilience of your security infrastructure.">
+               Realização de simulações controladas de ataques maliciosos para testar e fortalecer a capacidade de resposta a incidentes, garantindo maior preparo e resiliência da sua infraestrutura de segurança.
+            </p>
+            <ul>
+               <li data-pt="Simulações controladas de phishing e engenharia social" data-en="Controlled phishing and social engineering simulations">Simulações controladas de phishing e engenharia social</li>
+               <li data-pt="Simulações de ataques com malwares" data-en="Simulations of malware attacks">Simulações de ataques com malwares</li>
+               <li data-pt="Simulações controladas de ataques DDoS ou DoS" data-en="Controlled DDoS or DoS attack simulations">Simulações controladas de ataques DDoS ou DoS</li>
+            </ul>
+         </div>
+         <div class="service" id="complementos">
+            <h2 data-pt="🕷️ Complementos" data-en="🕷️ Add-ons">🕷️ Complementos</h2>
+            <p data-pt="Complementos aplicados a todos os serviços" data-en="Additions to all types of services offered.">Complementos aplicados a todos os serviços.</p>
+            <ul>
+               <li data-pt="Identificação de vulnerabilidades (OWASP Top 10, CVEs)" data-en="Identification of vulnerabilities (OWASP Top 10, CVEs)">Identificação de vulnerabilidades (OWASP Top 10, CVEs)</li>
+               <li data-pt="Emissão de relatórios técnicos e executivos com plano de mitigação" data-en="Issuance of technical and executive reports with mitigation plan">Emissão de relatórios técnicos e executivos com plano de mitigação</li>
+               <li data-pt="Consultoria para programas de Bug Bounty" data-en="Consulting for Bug Bounty programs">Consultoria para programas de Bug Bounty</li>
+            </ul>
+            <h3 data-pt="Testes realizados nos modos Black Box, Grey Box e White Box, em conformidade com a legislação vigente no país." data-en="Tests performed in Black Box, Grey Box and White Box modes, in accordance with the current legislation in the country.">Testes realizados nos modos Black Box, Grey Box e White Box, em conformidade com a legislação vigente no país.</h3>
+            <p data-pt="Se o seu objetivo específico de segurança não estiver listado aqui, entre em contato — avaliarei sua solicitação e proporei uma solução sob medida para atender às suas necessidades." data-en="If your specific security objective is not listed here, contact me — I will evaluate your request and propose a tailored solution to meet your needs.">Se o seu objetivo específico de segurança não estiver listado aqui, entre em contato — avaliarei sua solicitação e proporei uma solução sob medida para atender às suas necessidades.</p>
+         </div>
+         <div class="service" id="hardware">
+            <h2 data-pt="🕷️ Hardware Hacking" data-en="🕷️ Hardware Hacking">🕷️ Hardware Hacking</h2>
+            <p data-pt="Dispositivos físicos customizados para Pentesters, prontos para testes avançados de segurança em ambientes Windows e Linux." data-en="Customized physical devices for Pentesters, ready for advanced security testing in Windows and Linux environments.">Dispositivos físicos customizados para Pentesters, prontos para testes avançados de segurança em ambientes Windows e Linux.</p>
+            <ul>
+               <li data-pt="Arduinos com HID programados com payloads (Windows e Linux)" data-en="Arduinos with HID programmed payloads (Windows and Linux)">Arduinos com HID programados com payloads (Windows e Linux)</li>
+               <li data-pt="Raspberry Pis programados com payloads (Windows e Linux)" data-en="Raspberry Pis programmed with payloads (Windows and Linux)">Raspberry Pis programados com payloads (Windows e Linux)</li>
+               <li data-pt="Dispositivos personalizados sob encomenda" data-en="Other physical devices on order">Dispositivos personalizados sob encomenda</li>
+            </ul>
+         </div>
+         <div class="service" id="sobre">
+            <h2 data-pt="Sobre" data-en="About">Sobre</h2>
+            <p data-pt="Comecei a explorar computadores aos 3 anos de idade e, aos 10, já realizava algumas invasões a sistemas. Durante a adolescência, atuei em algumas das maiores equipes hacktivistas do mundo — experiência que desenvolveu meu olhar técnico para identificar falhas e vetores de ataque. Hoje, aplico esse conhecimento de forma ética e profissional, focado na proteção de infraestruturas e dados. Hacker ético com experiência prática em testes de intrusão, resposta a incidentes e análise de vulnerabilidades em ambientes reais."
+               data-en="I started exploring computers at 3 years old and by 10 I was already performing some system intrusions. During adolescence, I worked in some of the largest hacktivist teams in the world — experience that developed my technical eye to identify flaws and attack vectors. Today, I apply this knowledge ethically and professionally, focusing on protecting infrastructures and data. Ethical hacker with practical experience in intrusion testing, incident response, and vulnerability analysis in real environments.">
+               Comecei a explorar computadores aos 3 anos de idade e, aos 10, já realizava algumas invasões a sistemas. Durante a adolescência, atuei em algumas das maiores equipes hacktivistas do mundo — experiência que desenvolveu meu olhar técnico para identificar falhas e vetores de ataque. Hoje, aplico esse conhecimento de forma ética e profissional, focado na proteção de infraestruturas e dados. Hacker ético com experiência prática em testes de intrusão, resposta a incidentes e análise de vulnerabilidades em ambientes reais.
+            </p>
+            <p data-pt="Atuo de forma ativa em plataformas como TryHackMe e GitHub, sempre comprometido com a segurança do cliente e a privacidade das informações."
+               data-en="I am actively involved in platforms like TryHackMe and GitHub, always committed to client security and information privacy.">
+               Atuo de forma ativa em plataformas como TryHackMe e GitHub, sempre comprometido com a segurança do cliente e a privacidade das informações.
+            </p>
+         </div>
+         <div class="service" id="contato">
+            <h2 data-pt="Contato" data-en="Contact">Contato</h2>
+            <p data-pt="Quer comprar um dispositivo, proteger seu sistema ou descobrir vulnerabilidades antes dos atacantes?" data-en="Want to buy a device, protect your system, or discover vulnerabilities before attackers?">Quer comprar um dispositivo, proteger seu sistema ou descobrir vulnerabilidades antes dos atacantes?</p>
+            <ul>
+               <li>
+                  <strong data-pt="Envie-me um e-mail:" data-en="Send me an email:">
+                  Envie-me um e-mail:
+                  </strong>
+                  <a class="email-link" href="mailto:whoami.a51@protonmail.com">whoami.a51@protonmail.com</a>
+               </li>
+               <li data-pt="Chave PGP disponível sob solicitação." data-en="PGP key available upon request.">Chave PGP disponível sob solicitação.</li>
+            </ul>
+         </div>
+      </div>
+      <div class="footer" data-pt="© 2025 | Whoami-a51 • Segurança Ofensiva • Hackeie o sistema o sistema, proteja os dados." data-en="© 2025 | Whoami-a51 • Offensive Security • Hack the system, protect the data.">
+         © 2025 | Whoami-a51 • Segurança Ofensiva • Hackeie o sistema, proteja os dados.
+      </div>
+      <button onclick="scrollToTop()" id="scrollTopBtn">↑</button>
+      <style>
+         #scrollTopBtn {
+         display: none; /* Escondido por padrão */
+         position: fixed;
+         bottom: 20px;
+         right: 20px;
+         z-index: 99;
+         border: none;
+         outline: none;
+         background-color: #007bff; /* Azul vibrante */
+         color: white;
+         cursor: pointer;
+         padding: 10px 15px;
+         border-radius: 5px;
+         font-family: 'VT323', monospace;
+         font-size: 20px;
+         box-shadow: 0 0 10px #007bff;
+         transition: opacity 0.3s ease-in-out;
+         }
+         #scrollTopBtn:hover {
+         background-color: #0056b3;
+         }
+      </style>
+      <script>
+         window.onscroll = function () {
+           const btn = document.getElementById("scrollTopBtn");
+           if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+             btn.style.display = "block";
+           } else {
+             btn.style.display = "none";
+           }
+         };
+         
+         function scrollToTop() {
+           window.scrollTo({ top: 0, behavior: 'smooth' });
+         }
+      </script>
+      <script>
+         document.getElementById('language-selector').addEventListener('change', function () {
+           const lang = this.value;
+           document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+             el.textContent = el.getAttribute('data-' + lang);
+           });
+         });
+      </script>
+   </body>
 </html>
