@@ -72,74 +72,68 @@
          <source src="music.mp3" type="audio/mpeg" />
          Seu navegador não suporta áudio HTML5.
       </audio>
-     <style>
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: rgba(26, 26, 26, 0.95);
-    border: 1px solid #00aaff;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    width: 220px;
-    z-index: 1000;
-    border-radius: 10px;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 0 10px rgba(0, 170, 255, 0.4);
-    transition: all 0.3s ease-in-out;
-    overflow: hidden;
-  }
-
-  .mobile-menu a {
-    padding: 15px;
-    color: #00ccff;
-    text-decoration: none;
-    border-bottom: 1px solid #333;
-    font-family: 'VT323', monospace;
-    font-size: 20px;
-    transition: background 0.2s, color 0.2s;
-  }
-
-  .mobile-menu a:hover {
-    background-color: #111;
-    color: #58a6ff;
-  }
-
-  .menu-toggle {
-    display: none;
-    font-size: 24px;
-    color: #00aaff;
-    cursor: pointer;
-    font-family: 'VT323', monospace;
-  }
-
-  @media (max-width: 768px) {
-    .desktop-menu {
-      display: none;
-    }
-
-    .menu-toggle {
-      display: block;
-    }
-  }
-</style>
+      <style>
+         .mobile-menu {
+         display: none;
+         flex-direction: column;
+         background: rgba(26, 26, 26, 0.95);
+         border: 1px solid #00aaff;
+         position: absolute;
+         top: 60px;
+         right: 10px;
+         width: 220px;
+         z-index: 1000;
+         border-radius: 10px;
+         backdrop-filter: blur(4px);
+         box-shadow: 0 0 10px rgba(0, 170, 255, 0.4);
+         transition: all 0.3s ease-in-out;
+         overflow: hidden;
+         }
+         .mobile-menu a {
+         padding: 15px;
+         color: #00ccff;
+         text-decoration: none;
+         border-bottom: 1px solid #333;
+         font-family: 'VT323', monospace;
+         font-size: 20px;
+         transition: background 0.2s, color 0.2s;
+         }
+         .mobile-menu a:hover {
+         background-color: #111;
+         color: #58a6ff;
+         }
+         .menu-toggle {
+         display: none;
+         font-size: 24px;
+         color: #00aaff;
+         cursor: pointer;
+         font-family: 'VT323', monospace;
+         }
+         @media (max-width: 768px) {
+         .desktop-menu {
+         display: none;
+         }
+         .menu-toggle {
+         display: block;
+         }
+         }
+      </style>
       <div style="text-align:right; padding: 10px;">
          <span class="menu-toggle" onclick="toggleMenu()">☰ Menu</span>
       </div>
       <div class="mobile-menu" id="mobileMenu">
-         <a href="#pentest" data-pt="Pentest" data-en="Pentest">Pentest</a>
-         <a href="#análises" data-pt="Análises" data-en="Analysis">Análises</a>
-         <a href="#simulações" data-pt="Simulações" data-en="Simulations">Simulações</a>
-         <a href="#hardware" data-pt="Hardware" data-en="Hardware">Hardware</a>
-         <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
-         <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
+         <a href="#pentest" onclick="toggleMenu()" data-pt="Pentest" data-en="Pentest">Pentest</a>
+         <a href="#análises" onclick="toggleMenu()" data-pt="Análises" data-en="Analysis">Análises</a>
+         <a href="#simulações" onclick="toggleMenu()" data-pt="Simulações" data-en="Simulations">Simulações</a>
+         <a href="#hardware" onclick="toggleMenu()" data-pt="Hardware" data-en="Hardware">Hardware</a>
+         <a href="#sobre" onclick="toggleMenu()" data-pt="Sobre" data-en="About">Sobre</a>
+         <a href="#contato" onclick="toggleMenu()" data-pt="Contato" data-en="Contact">Contato</a>
       </div>
       <script>
          function toggleMenu() {
-           const menu = document.getElementById("mobileMenu");
-           menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+         const menu = document.getElementById("mobileMenu");
+         menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
          }
-         
          document.getElementById('language-selector')?.addEventListener('change', function () {
            const lang = this.value;
            document.querySelectorAll('[data-pt], [data-en]').forEach(el => {
@@ -300,4 +294,4 @@
       </script>
    </body>
 </html>
-<--! tem certeza que olhou tudo? :P-.>
+<--! tem certeza que olhou tudo? :P -->
