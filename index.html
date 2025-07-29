@@ -147,6 +147,61 @@
          <h1>Whoami-a51</h1>
          <p data-pt="Segurança Ofensiva • Hacking Ético" data-en="Offensive Security • Ethical Hacking">Segurança Ofensiva • Hacking Ético</p>
       </header>
+      <section
+         id="terminal"
+         style="
+         max-width: 900px;
+         margin: auto;
+         padding: 20px;
+         background: #111;
+         color: #00bfff; /* Texto azul */
+         font-family: 'Courier New', monospace;
+         border: 2px solid #00bfff; /* Borda azul */
+         border-radius: 8px;
+         box-shadow:
+         0 0 10px #00bfff,
+         0 0 20px #00bfff,
+         0 0 30px #00bfff; /* Glow azul intenso */
+         "
+         >
+         <pre id="terminal-text" style="white-space: pre-wrap; user-select: none;">$ <span id="cursor">█</span></pre>
+      </section>
+      <script>
+         const terminalText = document.getElementById("terminal-text");
+         const commands = [
+           "whoami",
+           "nmap -Pn -T4 -sS -p 5900 --open 104.16.149.244",
+           "echo -ne 'RFB 003.008\\n' | nc 104.16.149.244 5900",
+           "msf6 auxiliary(scanner/vnc/vnc_none_auth) > run",
+           "python3 exploit.py 104.16.149.244 --execute",
+           "exit",
+         ];
+         
+         let line = 0;
+         let charIndex = 0;
+         let currentLine = "";
+         let typing = true;
+         
+         function type() {
+           if (line >= commands.length) return;
+         
+           if (charIndex < commands[line].length) {
+             currentLine += commands[line][charIndex];
+             terminalText.textContent = terminalText.textContent + commands[line][charIndex];
+             charIndex++;
+             setTimeout(type, 80);
+           } else {
+             terminalText.textContent += "\n$ ";
+             line++;
+             charIndex = 0;
+             currentLine = "";
+             setTimeout(type, 500);
+           }
+         }
+         
+         terminalText.textContent = "$ ";
+         setTimeout(type, 500);
+      </script>
       <nav>
          <a href="#pentest" data-pt="Pentest" data-en="Pentest">Pentest</a>
          <a href="#análises" data-pt="Análises" data-en="Analyses">Análises</a>
@@ -244,62 +299,6 @@
             </ul>
          </div>
       </div>
-<section
-  id="terminal"
-  style="
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background: #111;
-    color: #00bfff; /* Texto azul */
-    font-family: 'Courier New', monospace;
-    border: 2px solid #00bfff; /* Borda azul */
-    border-radius: 8px;
-    box-shadow:
-      0 0 10px #00bfff,
-      0 0 20px #00bfff,
-      0 0 30px #00bfff; /* Glow azul intenso */
-  "
->
-  <pre id="terminal-text" style="white-space: pre-wrap; user-select: none;">$ <span id="cursor">█</span></pre>
-</section>
-
-<script>
-  const terminalText = document.getElementById("terminal-text");
-  const commands = [
-    "whoami",
-    "nmap -Pn -T4 -sS -p 5900 --open 104.16.149.244",
-    "echo -ne 'RFB 003.008\\n' | nc 104.16.149.244 5900",
-    "msf6 auxiliary(scanner/vnc/vnc_none_auth) > run",
-    "python3 exploit.py 104.16.149.244 --execute",
-    "exit",
-  ];
-
-  let line = 0;
-  let charIndex = 0;
-  let currentLine = "";
-  let typing = true;
-
-  function type() {
-    if (line >= commands.length) return;
-
-    if (charIndex < commands[line].length) {
-      currentLine += commands[line][charIndex];
-      terminalText.textContent = terminalText.textContent + commands[line][charIndex];
-      charIndex++;
-      setTimeout(type, 80);
-    } else {
-      terminalText.textContent += "\n$ ";
-      line++;
-      charIndex = 0;
-      currentLine = "";
-      setTimeout(type, 500);
-    }
-  }
-
-  terminalText.textContent = "$ ";
-  setTimeout(type, 500);
-</script>
       <div class="footer" data-pt="© 2025 | Whoami-a51 • Segurança Ofensiva • Hackeie o sistema o sistema, proteja os dados." data-en="© 2025 | Whoami-a51 • Offensive Security • Hack the system, protect the data.">
          © 2025 | Whoami-a51 • Segurança Ofensiva • Hackeie o sistema, proteja os dados.
       </div>
