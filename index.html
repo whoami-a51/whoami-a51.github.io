@@ -200,7 +200,7 @@
          </div>
          <div class="service" id="complementos">
             <h2 data-pt="🕷️ Complementos" data-en="🕷️ Add-ons">🕷️ Complementos</h2>
-            <p data-pt="Complementos aplicados a todos os serviços" data-en="Additions to all types of services offered.">Complementos aplicados a todos os serviços.</p>
+            <p data-pt="Complementos aplicados a todos os serviços." data-en="Additions to all types of services offered.">Complementos aplicados a todos os serviços.</p>
             <ul>
                <li data-pt="Identificação de vulnerabilidades (OWASP Top 10, CVEs)" data-en="Identification of vulnerabilities (OWASP Top 10, CVEs)">Identificação de vulnerabilidades (OWASP Top 10, CVEs)</li>
                <li data-pt="Emissão de relatórios técnicos e executivos com plano de mitigação" data-en="Issuance of technical and executive reports with mitigation plan">Emissão de relatórios técnicos e executivos com plano de mitigação</li>
@@ -216,6 +216,7 @@
                <li data-pt="Arduinos com HID programados com payloads (Windows e Linux)" data-en="Arduinos with HID programmed payloads (Windows and Linux)">Arduinos com HID programados com payloads (Windows e Linux)</li>
                <li data-pt="Raspberry Pis programados com payloads (Windows e Linux)" data-en="Raspberry Pis programmed with payloads (Windows and Linux)">Raspberry Pis programados com payloads (Windows e Linux)</li>
                <li data-pt="Dispositivos personalizados sob encomenda" data-en="Other physical devices on order">Dispositivos personalizados sob encomenda</li>
+               <p data-pt="+ Jailbreak em dispositivos iOS" data-en="+ Jailbreak on iOS devices ">+ Jailbreak em dispositivos iOS (< iOS 14.8.1)</p>
             </ul>
          </div>
          <div class="service" id="sobre">
@@ -243,6 +244,57 @@
             </ul>
          </div>
       </div>
+      <section
+         id="terminal"
+         style="
+         max-width: 900px;
+         margin: auto;
+         padding: 20px;
+         background: #111;
+         color: #0f0;
+         font-family: 'Courier New', monospace;
+         border-radius: 8px;
+         box-shadow: 0 0 10px #00ff88;
+         "
+         >
+          <pre id="terminal-text" style="white-space: pre-wrap; user-select: none;">$ <span id="cursor">█</span></pre>
+      </section>
+      <script>
+         const terminalText = document.getElementById("terminal-text");
+         const commands = [
+           "whoami",
+           "nmap -Pn -T4 -sS -p 5900 --open 104.16.149.244",
+           "echo -ne 'RFB 003.008\\n' | nc 104.16.149.244 5900",
+           "msf6 auxiliary(scanner/vnc/vnc_none_auth) > run",
+           "python3 exploit.py 104.16.149.244 --execute",
+           "exit",
+         ];
+         
+         let line = 0;
+         let charIndex = 0;
+         let currentLine = "";
+         let typing = true;
+         
+         function type() {
+           if (line >= commands.length) return;
+         
+           if (charIndex < commands[line].length) {
+             currentLine += commands[line][charIndex];
+             terminalText.textContent = terminalText.textContent + commands[line][charIndex];
+             charIndex++;
+             setTimeout(type, 80);
+           } else {
+             terminalText.textContent += "\n$ ";
+             line++;
+             charIndex = 0;
+             currentLine = "";
+             setTimeout(type, 500);
+           }
+         }
+         
+         terminalText.textContent = "$ ";
+         setTimeout(type, 500);
+      </script>
       <div class="footer" data-pt="© 2025 | Whoami-a51 • Segurança Ofensiva • Hackeie o sistema o sistema, proteja os dados." data-en="© 2025 | Whoami-a51 • Offensive Security • Hack the system, protect the data.">
          © 2025 | Whoami-a51 • Segurança Ofensiva • Hackeie o sistema, proteja os dados.
       </div>
