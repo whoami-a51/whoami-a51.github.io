@@ -122,7 +122,21 @@ h1.hero-title{margin-top:1.5rem;font-size:clamp(2.5rem,7vw,4.5rem);font-weight:7
 .term-title{margin-left:.75rem;font-size:.75rem;color:var(--muted-foreground)}
 .term-body{min-height:360px;padding:1.25rem;font-size:.875rem;line-height:1.7}
 .term-line{margin-bottom:.5rem}
-.term-out{color:var(--muted-foreground);white-space:pre}
+.term-out {color: var(--muted-foreground); white-space: pre-wrap; word-break: break-word;}
+  .term-body {
+  min-height: 360px;
+  padding: 1.25rem;
+  font-size: .875rem;
+  line-height: 1.7;
+
+  overflow-x: hidden;
+  word-break: break-word;
+}
+  .term-line {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 .scanline::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 3px,color-mix(in oklab,var(--neon) 4%,transparent) 4px);pointer-events:none}
 .caret::after{content:"▍";color:var(--terminal);animation:cb 1s steps(1) infinite;margin-left:2px}
 @keyframes cb{50%{opacity:0}}
