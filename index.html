@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>whoami-a51 — Ethical Hacking & Cybersecurity</title>
+<meta name="description" content="Serviço profissional de Ethical Hacking: pentest, análises, simulações e hardware hacking. Proteja seus sistemas antes que um atacante o faça." />
+<meta name="author" content="whoami-a51" />
+<meta property="og:title" content="whoami-a51 — Ethical Hacking" />
+<meta property="og:description" content="Pentest, análises e simulações de segurança ofensiva ética." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --background: oklch(0.14 0.02 260);
+  --foreground: oklch(0.95 0.01 240);
+  --card: oklch(0.18 0.025 260);
+  --primary: oklch(0.72 0.22 240);
+  --primary-foreground: oklch(0.1 0.02 260);
+  --secondary: oklch(0.22 0.03 260);
+  --muted-foreground: oklch(0.65 0.03 250);
+  --accent: oklch(0.78 0.22 150);
+  --destructive: oklch(0.65 0.25 25);
+  --border: oklch(0.28 0.03 260);
+  --neon: oklch(0.72 0.22 240);
+  --terminal: oklch(0.82 0.25 145);
+  --radius: 0.5rem;
+  --font-mono: "JetBrains Mono","Fira Code",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;border-color:var(--border)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-mono);
+  background-color:var(--background);
+  color:var(--foreground);
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--neon) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--neon) 6%, transparent) 1px, transparent 1px);
+  background-size:40px 40px;
+  background-attachment:fixed;
+  line-height:1.5;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:none;color:inherit}
+
+.container{max-width:72rem;margin:0 auto;padding:0 1.5rem}
+.text-primary{color:var(--primary)}
+.text-accent{color:var(--accent)}
+.text-foreground{color:var(--foreground)}
+.text-muted{color:var(--muted-foreground)}
+.text-glow-neon{text-shadow:0 0 12px color-mix(in oklab, var(--neon) 70%, transparent)}
+.text-glow-term{text-shadow:0 0 10px color-mix(in oklab, var(--terminal) 70%, transparent)}
+.border-glow{box-shadow:0 0 0 1px color-mix(in oklab,var(--neon) 35%,transparent),0 0 30px -5px color-mix(in oklab,var(--neon) 40%,transparent)}
+.card-hack{
+  background:linear-gradient(180deg,color-mix(in oklab,var(--card) 92%,transparent),color-mix(in oklab,var(--background) 92%,transparent));
+  border:1px solid color-mix(in oklab,var(--neon) 18%,var(--border));
+  border-radius:var(--radius);
+  transition:all .3s ease;
+}
+.card-hack:hover{
+  border-color:color-mix(in oklab,var(--neon) 60%,transparent);
+  box-shadow:0 0 40px -10px color-mix(in oklab,var(--neon) 50%,transparent);
+  transform:translateY(-2px);
+}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .3s ease;background:transparent}
+.nav.scrolled{backdrop-filter:blur(12px);background:color-mix(in oklab,var(--background) 70%,transparent);border-bottom:1px solid color-mix(in oklab,var(--border) 60%,transparent)}
+.nav-inner{max-width:72rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:700;letter-spacing:-.02em}
+.nav-links{display:none;gap:1.75rem;font-size:.875rem;align-items:center}
+.nav-links a{color:var(--muted-foreground);transition:color .2s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{display:none;border:1px solid color-mix(in oklab,var(--primary) 60%,transparent);padding:.375rem .75rem;border-radius:var(--radius);font-size:.75rem;font-weight:500;color:var(--primary);transition:all .2s}
+.nav-cta:hover{background:var(--primary);color:var(--primary-foreground)}
+.menu-btn{font-size:1.5rem;background:none;border:none;color:var(--foreground)}
+.mobile-menu{display:none;border-top:1px solid color-mix(in oklab,var(--border) 60%,transparent);background:color-mix(in oklab,var(--background) 95%,transparent);backdrop-filter:blur(8px)}
+.mobile-menu.open{display:block}
+.mobile-menu nav{display:flex;flex-direction:column;padding:1rem 1.5rem;gap:.75rem;font-size:.875rem}
+.mobile-menu a{color:var(--muted-foreground)}
+.mobile-menu a:hover{color:var(--primary)}
+@media(min-width:768px){
+  .nav-links,.nav-cta{display:flex}
+  .menu-btn{display:none}
+}
+
+/* Hero */
+.hero{position:relative;padding:8rem 0 5rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.blob{position:absolute;width:24rem;height:24rem;border-radius:9999px;filter:blur(64px)}
+.blob-1{top:25%;left:25%;background:color-mix(in oklab,var(--primary) 10%,transparent)}
+.blob-2{bottom:0;right:25%;background:color-mix(in oklab,var(--accent) 10%,transparent)}
+.hero-grid{display:grid;gap:3rem;align-items:center}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1fr 1fr}}
+.badge{display:inline-flex;align-items:center;gap:.5rem;border:1px solid color-mix(in oklab,var(--primary) 40%,transparent);background:color-mix(in oklab,var(--primary) 5%,transparent);padding:.25rem .75rem;border-radius:9999px;font-size:.75rem;color:var(--primary)}
+.dot{height:.5rem;width:.5rem;border-radius:9999px;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1.hero-title{margin-top:1.5rem;font-size:clamp(2.5rem,7vw,4.5rem);font-weight:700;line-height:1.05;letter-spacing:-.02em}
+.hero-desc{margin-top:1.5rem;font-size:1.125rem;color:var(--muted-foreground);max-width:36rem;line-height:1.7}
+.btn-row{margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:var(--radius);padding:.75rem 1.5rem;font-size:.875rem;font-weight:600;transition:all .2s}
+.btn-primary{background:var(--primary);color:var(--primary-foreground);box-shadow:0 0 0 1px color-mix(in oklab,var(--neon) 35%,transparent),0 0 30px -5px color-mix(in oklab,var(--neon) 40%,transparent)}
+.btn-primary:hover{background:color-mix(in oklab,var(--primary) 90%,transparent)}
+.btn-outline{border:1px solid var(--border);color:var(--foreground)}
+.btn-outline:hover{border-color:color-mix(in oklab,var(--primary) 60%,transparent);color:var(--primary)}
+.stats{margin-top:2.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:28rem}
+.stat-num{font-size:1.5rem;font-weight:700;color:var(--primary);text-shadow:0 0 12px color-mix(in oklab,var(--neon) 70%,transparent)}
+.stat-lbl{font-size:.75rem;color:var(--muted-foreground)}
+
+/* Terminal */
+.terminal{position:relative;overflow:hidden;border-radius:var(--radius)}
+.term-bar{display:flex;align-items:center;gap:.5rem;border-bottom:1px solid color-mix(in oklab,var(--border) 60%,transparent);background:color-mix(in oklab,var(--secondary) 40%,transparent);padding:.5rem 1rem}
+.term-dot{height:.75rem;width:.75rem;border-radius:9999px}
+.td-r{background:color-mix(in oklab,var(--destructive) 80%,transparent)}
+.td-y{background:rgb(234 179 8 / .8)}
+.td-g{background:color-mix(in oklab,var(--accent) 80%,transparent)}
+.term-title{margin-left:.75rem;font-size:.75rem;color:var(--muted-foreground)}
+.term-body{min-height:360px;padding:1.25rem;font-size:.875rem;line-height:1.7}
+.term-line{margin-bottom:.5rem}
+.term-out{color:var(--muted-foreground);white-space:pre}
+.scanline::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 3px,color-mix(in oklab,var(--neon) 4%,transparent) 4px);pointer-events:none}
+.caret::after{content:"▍";color:var(--terminal);animation:cb 1s steps(1) infinite;margin-left:2px}
+@keyframes cb{50%{opacity:0}}
+
+/* Sections */
+section.s{scroll-margin-top:6rem;padding:6rem 0}
+.prompt{margin-bottom:.75rem;font-size:.875rem;color:var(--accent);text-shadow:0 0 10px color-mix(in oklab,var(--terminal) 70%,transparent)}
+.prompt span{opacity:.7}
+h2.s-title{font-size:clamp(2rem,5vw,3rem);font-weight:700;letter-spacing:-.02em;text-shadow:0 0 12px color-mix(in oklab,var(--neon) 70%,transparent)}
+.s-desc{margin-top:1.25rem;max-width:48rem;font-size:1.05rem;line-height:1.7;color:var(--muted-foreground)}
+.s-content{margin-top:2.5rem}
+.feature-grid{display:grid;gap:1rem}
+@media(min-width:768px){.feature-grid{grid-template-columns:1fr 1fr}}
+.feature{padding:1.25rem;display:flex;gap:.75rem;align-items:flex-start;opacity:0;transform:translateY(20px);animation:fiu .6s ease-out forwards}
+@keyframes fiu{to{opacity:1;transform:translateY(0)}}
+.feature .arrow{margin-top:.125rem;color:var(--primary);font-weight:700}
+.feature span:last-child{font-size:.95rem;color:color-mix(in oklab,var(--foreground) 90%,transparent)}
+
+.callout{margin-top:2.5rem;font-size:.875rem;color:var(--muted-foreground);border-left:2px solid color-mix(in oklab,var(--primary) 60%,transparent);padding-left:1rem}
+
+/* Sobre */
+.about-grid{display:grid;gap:2rem}
+@media(min-width:1024px){.about-grid{grid-template-columns:2fr 1fr}}
+.about-text{font-size:1.05rem;line-height:1.7;color:var(--muted-foreground);display:flex;flex-direction:column;gap:1.25rem}
+.skills{padding:1.5rem}
+.skills .label{font-size:.75rem;color:var(--accent);text-shadow:0 0 10px color-mix(in oklab,var(--terminal) 70%,transparent);margin-bottom:.75rem}
+.skills ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;font-size:.875rem}
+.skills li{display:flex;gap:.5rem}
+.skills .foot{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid color-mix(in oklab,var(--border) 60%,transparent);font-size:.75rem;color:var(--muted-foreground)}
+
+/* Contato */
+.contact-card{padding:2rem;max-width:42rem}
+.contact-card .label{font-size:.75rem;color:var(--muted-foreground)}
+.contact-card .email{font-size:1.25rem;color:var(--primary);text-shadow:0 0 12px color-mix(in oklab,var(--neon) 70%,transparent);word-break:break-all}
+.contact-card .email:hover{text-decoration:underline}
+.contact-card .field{margin-bottom:1rem}
+
+footer{border-top:1px solid color-mix(in oklab,var(--border) 60%,transparent);padding:2rem 0;margin-top:3rem}
+.footer-inner{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:.75rem;font-size:.75rem;color:var(--muted-foreground)}
+@media(min-width:768px){.footer-inner{flex-direction:row}}
+.fade-up{opacity:0;transform:translateY(20px);animation:fiu .6s ease-out forwards}
+.delay-200{animation-delay:.2s}
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <span class="text-accent text-glow-term">&lt;/</span>
+      <span class="text-primary text-glow-neon">whoami-a51</span>
+      <span class="text-accent text-glow-term">/&gt;</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#pentest">Pentest</a>
+      <a href="#analises">Análises</a>
+      <a href="#simulacoes">Simulações</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#contato" class="nav-cta">./contact</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">≡</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="#pentest">Pentest</a>
+      <a href="#analises">Análises</a>
+      <a href="#simulacoes">Simulações</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"><div class="blob blob-1"></div><div class="blob blob-2"></div></div>
+  <div class="container hero-grid">
+    <div class="fade-up">
+      <div class="badge"><span class="dot"></span>SYSTEM ONLINE · OFFENSIVE SECURITY</div>
+      <h1 class="hero-title">
+        <span class="text-foreground">Ethical</span>
+        <span class="text-primary text-glow-neon">Hacking</span><br>
+        <span class="text-accent text-glow-term">_</span>
+        <span class="text-foreground"> com precisão.</span>
+      </h1>
+      <p class="hero-desc">Pentest, análise de vulnerabilidades e simulações de ataque para proteger sua infraestrutura, dispositivos e dados antes que um atacante real o faça.</p>
+      <div class="btn-row">
+        <a href="#contato" class="btn btn-primary">▸ Solicitar Avaliação de Segurança</a>
+        <a href="#pentest" class="btn btn-outline">./serviços</a>
+      </div>
+      <div class="stats">
+        <div><div class="stat-num">100+</div><div class="stat-lbl">Operações</div></div>
+        <div><div class="stat-num">14+</div><div class="stat-lbl">Anos exp.</div></div>
+        <div><div class="stat-num">0day</div><div class="stat-lbl">Mindset</div></div>
+      </div>
+    </div>
+    <div class="fade-up delay-200">
+      <div class="terminal card-hack scanline border-glow">
+        <div class="term-bar">
+          <span class="term-dot td-r"></span><span class="term-dot td-y"></span><span class="term-dot td-g"></span>
+          <span class="term-title">/bin/zsh — whoami-a51@blackarch</span>
+        </div>
+        <div class="term-body" id="term"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pentest" class="s">
+  <div class="container">
+    <div class="prompt"><span>$</span> cat ./services/pentest.md</div>
+    <h2 class="s-title"><span class="text-primary">//</span> Pentest</h2>
+    <p class="s-desc">Avaliação aprofundada da segurança de sistemas, redes e dispositivos por meio de testes de penetração (Pentest), com entrega de relatórios completos contendo evidências técnicas, análise de riscos e recomendações de mitigação.</p>
+    <div class="s-content"><div class="feature-grid" data-features='["Testes de penetração em aplicações web, mobile e redes","Testes de invasão em infraestruturas e dispositivos IoT","Testes residenciais controlados (portões, smart locks, câmeras IP)","Segurança em ambientes industriais (SCADA, ICS, PLCs)","Redes e protocolos de telecom (4G/5G, VoIP, SIP, SS7)"]'></div></div>
+  </div>
+</section>
+
+<section id="analises" class="s">
+  <div class="container">
+    <div class="prompt"><span>$</span> run ./analysis --personal</div>
+    <h2 class="s-title"><span class="text-primary">//</span> Análises</h2>
+    <p class="s-desc">Avaliação detalhada da segurança pessoal com emissão de relatórios completos, identificando vulnerabilidades e apresentando recomendações práticas.</p>
+    <div class="s-content"><div class="feature-grid" data-features='["Segurança em contas pessoais (Instagram, e-mail, etc.)","Segurança em dispositivos (Android, iOS, macOS, Windows, Linux)","Segurança em carteiras de Bitcoin"]'></div></div>
+  </div>
+</section>
+
+<section id="simulacoes" class="s">
+  <div class="container">
+    <div class="prompt"><span>$</span> exec ./simulations --controlled</div>
+    <h2 class="s-title"><span class="text-primary">//</span> Simulações</h2>
+    <p class="s-desc">Simulações controladas de ataques para testar e fortalecer a capacidade de resposta a incidentes.</p>
+    <div class="s-content">
+      <div class="feature-grid" data-features='["Phishing e engenharia social","Ataques com malware","Ataques DDoS / DoS controlados"]'></div>
+      <div style="margin-top:3rem">
+        <h3 style="font-size:1.25rem;font-weight:600;color:var(--accent);text-shadow:0 0 10px color-mix(in oklab,var(--terminal) 70%,transparent);margin-bottom:1rem">// Complementos</h3>
+        <div class="feature-grid" data-features='["OWASP Top 10, CVEs","Relatórios técnicos + executivos","Consultoria em Bug Bounty"]'></div>
+      </div>
+      <p class="callout">Testes realizados nos modos <span class="text-primary">Black Box</span>, <span class="text-primary">Grey Box</span> e <span class="text-primary">White Box</span>, em conformidade com a legislação vigente.</p>
+    </div>
+  </div>
+</section>
+
+<section id="hardware" class="s">
+  <div class="container">
+    <div class="prompt"><span>$</span> dmesg | grep custom_device</div>
+    <h2 class="s-title"><span class="text-primary">//</span> Hardware Hacking</h2>
+    <p class="s-desc">Dispositivos físicos customizados para Pentesters.</p>
+    <div class="s-content"><div class="feature-grid" data-features='["Arduino HID com payloads (Windows / Linux)","Raspberry Pi com payloads","Dispositivos personalizados sob encomenda","Jailbreak em dispositivos iOS (< iOS 14.8.1)"]'></div></div>
+  </div>
+</section>
+
+<section id="sobre" class="s">
+  <div class="container">
+    <div class="prompt"><span>$</span> whoami --verbose</div>
+    <h2 class="s-title"><span class="text-primary">//</span> Sobre</h2>
+    <div class="s-content about-grid">
+      <div class="about-text">
+        <p>Comecei a explorar computadores aos 3 anos de idade e, aos 10, já realizava algumas invasões a sistemas. Durante a adolescência, atuei em mais de 100 operações de hacking em equipes hacktivistas e também na segurança de jornalistas e manifestantes.</p>
+        <p>Hoje aplico esse conhecimento de forma <span class="text-primary">ética e profissional</span>, focado na proteção de infraestruturas e dados.</p>
+      </div>
+      <div class="card-hack skills">
+        <div class="label">~/skills</div>
+        <ul>
+          <li><span class="text-primary">▸</span><span>Testes de intrusão</span></li>
+          <li><span class="text-primary">▸</span><span>Resposta a incidentes</span></li>
+          <li><span class="text-primary">▸</span><span>Análise de vulnerabilidades</span></li>
+        </ul>
+        <div class="foot">Atuação ativa em <span class="text-primary">TryHackMe</span> e <span class="text-primary">GitHub</span>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="s">
+  <div class="container">
+    <div class="prompt"><span>$</span> ssh contact@whoami-a51</div>
+    <h2 class="s-title"><span class="text-primary">//</span> Contato</h2>
+    <p class="s-desc">Quer proteger seu sistema ou identificar vulnerabilidades antes de um ataque?</p>
+    <div class="s-content">
+      <div class="card-hack contact-card">
+        <div class="field">
+          <div class="label">email</div>
+          <a href="mailto:whoami.a51@protonmail.com" class="email">whoami.a51@protonmail.com</a>
+        </div>
+        <div class="field">
+          <div class="label">pgp</div>
+          <div style="font-size:.875rem;color:color-mix(in oklab,var(--foreground) 80%,transparent)">Chave PGP disponível sob solicitação</div>
+        </div>
+        <a href="mailto:whoami.a51@protonmail.com" class="btn btn-primary" style="margin-top:1.5rem">▸ Entrar em contato</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div><span class="text-primary">whoami-a51</span> <span class="text-accent">// exit && reboot </span></div>
+    <div>© <span id="year"></span> — All systems operational.</div>
+  </div>
+</footer>
+
+<script>
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Nav scroll
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+onScroll(); window.addEventListener('scroll', onScroll);
+
+// Mobile menu
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  menuBtn.textContent = open ? '✕' : '≡';
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobileMenu.classList.remove('open'); menuBtn.textContent = '≡';
+}));
+
+// Features render
+document.querySelectorAll('[data-features]').forEach(grid => {
+  const items = JSON.parse(grid.getAttribute('data-features'));
+  items.forEach((it, i) => {
+    const d = document.createElement('div');
+    d.className = 'feature card-hack';
+    d.style.animationDelay = (i * 60) + 'ms';
+    d.innerHTML = '<span class="arrow">▸</span><span>' + it + '</span>';
+    grid.appendChild(d);
+  });
+});
+
+// Terminal
+const LINES = [
+  { p: "root@whoami-a51:~$", c: "whoami", out: ["whoami-a51"] },
+  { p: "root@whoami-a51:~$", c: "nmap -Pn -T4 -sS -p 5900 --open 104.16.149.244", out: [
+    "Starting Nmap 7.94 ( https://nmap.org )",
+    "PORT     STATE SERVICE",
+    "5900/tcp open  vnc",
+  ]},
+  { p: "root@whoami-a51:~$", c: 'echo -ne "RFB 003.008\\n" | nc 104.16.149.244 5900', out: ["RFB 003.008"] },
+  { p: "msf6 >", c: "use auxiliary/scanner/vnc/vnc_none_auth", out: [] },
+  { p: "msf6 auxiliary(vnc_none_auth) >", c: "run", out: [
+    "[+] 104.16.149.244:5900 - No authentication required",
+    "[*] Auxiliary module execution completed",
+  ]},
+  { p: "root@whoami-a51:~$", c: "python3 exploit.py 104.16.149.244 --execute", out: [
+    "[*] Accessing vulnerabilities...",
+    "[+] Session established.",
+    "",
+    '"Security is not a product. It\'s a process."',
+  ]},
+];
+
+const term = document.getElementById('term');
+let lineIdx = 0, charIdx = 0, showOut = false;
+
+function escape(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+
+function render(){
+  let html = '';
+  for(let i=0;i<lineIdx;i++){
+    const l = LINES[i];
+    html += '<div class="term-line"><div><span class="text-accent text-glow-term">'+escape(l.p)+'</span> <span class="text-foreground">'+escape(l.c)+'</span></div>';
+    l.out.forEach(o => html += '<div class="term-out">'+escape(o)+'</div>');
+    html += '</div>';
+  }
+  if(lineIdx < LINES.length){
+    const l = LINES[lineIdx];
+    const typed = l.c.slice(0, charIdx);
+    html += '<div class="term-line"><div><span class="text-accent text-glow-term">'+escape(l.p)+'</span> <span class="text-foreground'+(!showOut?' caret':'')+'">'+escape(typed)+'</span></div>';
+    if(showOut) l.out.forEach(o => html += '<div class="term-out">'+escape(o)+'</div>');
+    html += '</div>';
+  }
+  term.innerHTML = html;
+}
+
+function tick(){
+  if(lineIdx >= LINES.length){ render(); return; }
+  const cur = LINES[lineIdx];
+  if(!showOut){
+    if(charIdx < cur.c.length){
+      charIdx++; render();
+      setTimeout(tick, 35 + Math.random()*40);
+    } else {
+      setTimeout(()=>{ showOut=true; render(); tick(); }, 250);
+    }
+  } else {
+    setTimeout(()=>{ lineIdx++; charIdx=0; showOut=false; render(); tick(); }, 600);
+  }
+}
+render(); tick();
+</script>
+</body>
+</html>
